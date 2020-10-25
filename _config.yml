@@ -1,4 +1,4 @@
 theme: jekyll-theme-dinky
 title: Develoeper's Coffee
 description: [A short description of your site's purpose]
-google_analytics: ${{secrets.GH_TOKEN }}
+google_analytics: ${{secrets.google_analytics }}
