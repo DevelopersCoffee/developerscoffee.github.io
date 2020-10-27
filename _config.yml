@@ -1,5 +1,5 @@
 theme: jekyll-theme-dinky
 title: Develoeper's Coffee
-description: [Brewing your needs, facilitating the brewing process]
+description: Brewing your needs, facilitating the brewing process
 google_analytics: ${{secrets.google_analytics }}
 show_downloads: false
