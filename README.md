@@ -23,3 +23,11 @@ In this post, we will outline the steps required to have your story be co-publis
 
 
 [Contribution guidelines for this project](docs/HowToContribute.md)
+
+
+Follow os:
+[Linkedin Page](https://www.linkedin.com/company/developerscoffee)
+[Twitter handle](https://twitter.com/DevlopersCoffee)
+
+
+
