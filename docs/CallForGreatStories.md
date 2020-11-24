@@ -58,9 +58,12 @@ During the editing process, we’ll work with authors to make their stories even
 
 As an official Medium partner, The Developer’s Coffee will work to achieve an even higher rate of curation for our authors and distribute their stories to an even wider audience.
 
-If you are looking for [how to start writing medium post](docs/HowToContribute.md).
-If you are facing the trouble to fill up the above from. You can copy this link and open in your favorite browser :
-https://www.jotform.com/build/203200537740444
+If you are looking for [how to start writing medium post](HowToContribute.md). 
+
+[Submit your story](https://www.jotform.com/build/203200537740444)
+
+[//]: # (If you are facing the trouble to fill up the above from. You can copy this link and open in your favorite browser :)
+
 
 Subscribe to our Medium publication : devs-magazine
 
