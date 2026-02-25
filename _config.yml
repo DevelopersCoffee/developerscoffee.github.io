@@ -1,5 +1,40 @@
-theme: jekyll-theme-dinky
-title: Develoeper's Coffee
-description: Brewing your needs, facilitating the brewing process
-google_analytics: ${{secrets.google_analytics }}
-show_downloads: false
+# Developers Coffee - GitHub Pages Configuration
+title: Developers Coffee
+description: Brewing Innovation in Code - Building production-ready systems, open-source tools, and innovative solutions
+url: https://developerscoffee.github.io
+baseurl: ""
+
+# Disable Jekyll theme to use custom HTML/CSS/JS
+theme: null
+
+# GitHub metadata
+github:
+  repository_url: https://github.com/DevelopersCoffee/developerscoffee.github.io
+  organization_url: https://github.com/DevelopersCoffee
+
+# Social links
+social:
+  twitter: DevlopersCoffee
+  linkedin: developer-scoffee
+  medium: devs-magazine
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
+
+# Exclude files from build
+exclude:
+  - README.md
+  - docs/
+  - img/
+
+# SEO
+lang: en
+author: Developers Coffee
+twitter:
+  username: DevlopersCoffee
+  card: summary_large_image
+
+# Google Analytics (if needed)
+# google_analytics: UA-XXXXXXXXX-X

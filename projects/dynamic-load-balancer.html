@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Load Balancer - Intelligent Traffic Distribution | Developers Coffee</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="../index.html#featured" class="breadcrumb-link">← Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <div class="project-hero-content">
+                <h1 class="project-title">Dynamic Load Balancer</h1>
+                <p class="project-tagline">Intelligent Traffic Distribution Across Multi-Cloud Environments</p>
+                <div class="project-meta">
+                    <span class="tech-tag">Go</span>
+                    <span class="tech-tag">Load Balancing</span>
+                    <span class="tech-tag">Circuit Breaking</span>
+                    <span class="tech-tag">Multi-Cloud</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Business Value Proposition</h2>
+            <div class="value-grid">
+                <div class="value-card">
+                    <h3>🎯 99.99% Uptime</h3>
+                    <p>Intelligent traffic distribution prevents downtime and revenue loss</p>
+                </div>
+                <div class="value-card">
+                    <h3>⚡ Adaptive Scaling</h3>
+                    <p>Real-time health checks and predictive scaling handle traffic spikes</p>
+                </div>
+                <div class="value-card">
+                    <h3>🌐 Multi-Cloud</h3>
+                    <p>Seamless traffic distribution across AWS, Azure, GCP, and on-prem</p>
+                </div>
+                <div class="value-card">
+                    <h3>🛡️ Circuit Breaking</h3>
+                    <p>Automatic failure detection and recovery prevents cascading failures</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section impact-section">
+        <div class="container">
+            <div class="impact-banner">
+                <h2>99.99% uptime with intelligent traffic distribution across multi-cloud environments</h2>
+                <p class="impact-problem"><strong>Problem:</strong> Static load balancers fail to adapt to traffic spikes, causing downtime and revenue loss</p>
+                <p class="impact-solution"><strong>Solution:</strong> Go-based adaptive load balancer with real-time health checks, circuit breaking, and predictive scaling</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Use Cases & Target Markets</h2>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <h3>🛒 E-Commerce Platforms</h3>
+                    <p><strong>Problem:</strong> Traffic spikes during sales events cause site crashes and lost revenue</p>
+                    <p><strong>Solution:</strong> Predictive scaling and intelligent traffic distribution</p>
+                    <p><strong>ROI:</strong> Prevent $100K+ revenue loss per hour of downtime</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>🏦 Financial Services</h3>
+                    <p><strong>Problem:</strong> High availability requirements demand 99.99%+ uptime</p>
+                    <p><strong>Solution:</strong> Multi-region failover with circuit breaking</p>
+                    <p><strong>ROI:</strong> Meet SLA requirements, avoid regulatory penalties</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>📱 SaaS Applications</h3>
+                    <p><strong>Problem:</strong> Uneven traffic distribution causes performance degradation</p>
+                    <p><strong>Solution:</strong> Real-time health monitoring and adaptive routing</p>
+                    <p><strong>ROI:</strong> Improve user experience, reduce churn by 25%</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>🌍 Global CDN</h3>
+                    <p><strong>Problem:</strong> Need to route traffic to nearest healthy endpoint</p>
+                    <p><strong>Solution:</strong> Geo-aware load balancing with latency optimization</p>
+                    <p><strong>ROI:</strong> Reduce latency by 40%, improve global performance</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>☁️ Multi-Cloud Strategy</h3>
+                    <p><strong>Problem:</strong> Vendor lock-in and single cloud dependency risks</p>
+                    <p><strong>Solution:</strong> Cloud-agnostic load balancing across AWS, Azure, GCP</p>
+                    <p><strong>ROI:</strong> Reduce cloud costs by 30%, eliminate vendor lock-in</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section tech-section">
+        <div class="container">
+            <h2 class="section-title">Technical Architecture</h2>
+            
+            <h3 class="subsection-title">Core Components</h3>
+            <div class="architecture-grid">
+                <div class="arch-component">
+                    <h4>⚖️ Load Balancing Algorithms</h4>
+                    <ul>
+                        <li>Round-robin with health awareness</li>
+                        <li>Least connections algorithm</li>
+                        <li>Weighted distribution</li>
+                        <li>IP hash for session persistence</li>
+                    </ul>
+                </div>
+                <div class="arch-component">
+                    <h4>🏥 Health Monitoring</h4>
+                    <ul>
+                        <li>Real-time health checks</li>
+                        <li>Configurable check intervals</li>
+                        <li>HTTP/TCP/gRPC probes</li>
+                        <li>Automatic unhealthy node removal</li>
+                    </ul>
+                </div>
+                <div class="arch-component">
+                    <h4>🔌 Circuit Breaking</h4>
+                    <ul>
+                        <li>Automatic failure detection</li>
+                        <li>Configurable failure thresholds</li>
+                        <li>Exponential backoff retry</li>
+                        <li>Graceful degradation</li>
+                    </ul>
+                </div>
+                <div class="arch-component">
+                    <h4>📊 Predictive Scaling</h4>
+                    <ul>
+                        <li>Traffic pattern analysis</li>
+                        <li>Auto-scaling triggers</li>
+                        <li>Resource optimization</li>
+                        <li>Cost-aware scaling</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Technology Stack</h3>
+            <div class="tech-stack-list">
+                <div class="stack-item"><strong>Language:</strong> Go (Golang)</div>
+                <div class="stack-item"><strong>Performance:</strong> High-throughput, low-latency</div>
+                <div class="stack-item"><strong>Deployment:</strong> Docker, Kubernetes</div>
+                <div class="stack-item"><strong>Monitoring:</strong> Prometheus, Grafana</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section features-section">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            
+            <h3 class="subsection-title">High Availability</h3>
+            <div class="features-grid">
+                <div class="feature-item">✅ <strong>99.99% Uptime</strong> - Production-tested reliability</div>
+                <div class="feature-item">✅ <strong>Multi-Region Failover</strong> - Automatic disaster recovery</div>
+                <div class="feature-item">✅ <strong>Zero Downtime Deployments</strong> - Rolling updates</div>
+                <div class="feature-item">✅ <strong>Health Monitoring</strong> - Real-time endpoint checks</div>
+            </div>
+
+            <h3 class="subsection-title">Intelligent Routing</h3>
+            <div class="features-grid">
+                <div class="feature-item">✅ <strong>Adaptive Algorithms</strong> - Dynamic traffic distribution</div>
+                <div class="feature-item">✅ <strong>Circuit Breaking</strong> - Prevent cascading failures</div>
+                <div class="feature-item">✅ <strong>Predictive Scaling</strong> - Anticipate traffic spikes</div>
+                <div class="feature-item">✅ <strong>Multi-Cloud Support</strong> - AWS, Azure, GCP, on-prem</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Explore Dynamic Load Balancer</h2>
+                <p>Intelligent traffic distribution for modern infrastructure</p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/DevelopersCoffee/dynamic-load-balancer" target="_blank" class="btn btn-primary">
+                        View on GitHub
+                    </a>
+                    <a href="../index.html#contact" class="btn btn-secondary">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Developers Coffee. Infrastructure Solutions ☕⚡</p>
+        </div>
+    </footer>
+</body>
+</html>
