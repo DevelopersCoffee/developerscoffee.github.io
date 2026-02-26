@@ -1,1 +1,1 @@
-private-repo==>private-repo
+private-enterprise==>private-enterprise
