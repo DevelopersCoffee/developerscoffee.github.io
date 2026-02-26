@@ -1,0 +1,14 @@
+# Robots.txt for Developers Coffee Portfolio
+# https://developerscoffee.github.io/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://developerscoffee.github.io/sitemap.xml
+
+# Disallow any potential admin or build directories
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.github/
+
