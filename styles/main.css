@@ -746,6 +746,96 @@ body {
     flex-shrink: 0;
 }
 
+/* ===== Community CTA Section ===== */
+.community-cta {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.community-cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.community-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.community-cta .cta-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.community-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.community-social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.community-social-link:hover {
+    border-color: var(--accent-primary);
+    background: rgba(88, 166, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.community-social-link svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.community-social-link .social-name {
+    font-size: 1rem;
+}
+
+.community-social-link.linkedin:hover {
+    border-color: #0A66C2;
+    color: #0A66C2;
+}
+
+.community-social-link.twitter:hover {
+    border-color: #1DA1F2;
+    color: #1DA1F2;
+}
+
+.community-cta .cta-note {
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.community-cta .cta-note a {
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+
+.community-cta .cta-note a:hover {
+    text-decoration: underline;
+}
+
 /* ===== Footer ===== */
 .footer {
     background: var(--bg-primary);
