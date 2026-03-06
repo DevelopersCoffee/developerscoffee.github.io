@@ -108,6 +108,52 @@ body {
     width: 100%;
 }
 
+/* ===== Navigation Dropdown ===== */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: var(--transition);
+    z-index: 1000;
+    list-style: none;
+    box-shadow: var(--shadow-lg);
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(5px);
+}
+
+.nav-dropdown .dropdown-menu li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.nav-dropdown .dropdown-menu li a:hover {
+    background: var(--bg-tertiary);
+    color: var(--accent-primary);
+}
+
+.nav-dropdown .dropdown-menu li a::after {
+    display: none;
+}
+
 /* ===== Hero Section ===== */
 .hero {
     min-height: 100vh;

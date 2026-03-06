@@ -9,7 +9,8 @@ const CONFIG = {
         'meeting-notes-ai',
         'dynamic-load-balancer',
         'dbsync',
-        'consentmp'
+        'consentmp',
+        'java-cwe-security-skills'
     ],
     excludedRepos: [
         'distributed-design-patterns',
@@ -156,6 +157,11 @@ function renderFeaturedProjects(repos) {
             impact: 'Enterprise consent management platform handling 10M+ consent decisions with <50ms response time',
             problem: 'Organizations face €20M GDPR fines and lose customer trust without proper consent management across channels and jurisdictions',
             solution: 'Multi-tenant SaaS platform with Java 21 + Spring Boot backend, React frontend, fine-grained consent capture, immutable audit trails, and real-time enforcement - achieve GDPR, CCPA, LGPD compliance'
+        },
+        'java-cwe-security-skills': {
+            impact: '54+ deterministic security remediation skills for AI coding agents and DevSecOps platforms',
+            problem: 'SAST tools detect vulnerabilities but lack deterministic remediation patterns, leaving developers to manually research and fix each issue',
+            solution: 'Open-source library of AI-readable CWE security skills with vulnerable patterns, secure implementations, and step-by-step fixes for Java applications'
         }
     };
     
