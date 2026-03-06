@@ -802,9 +802,10 @@ body {
 }
 
 .community-social-link svg {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
     fill: currentColor;
+    flex-shrink: 0;
 }
 
 .community-social-link .social-name {
