@@ -802,8 +802,8 @@ body {
 }
 
 .community-social-link svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     fill: currentColor;
     flex-shrink: 0;
 }
