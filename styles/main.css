@@ -748,49 +748,37 @@ body {
 
 /* ===== Community CTA Section ===== */
 .community-cta {
-    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+    background: var(--bg-secondary);
     border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
     padding: 4rem 0;
     text-align: center;
 }
 
-.community-cta-content {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.community-cta h2 {
-    font-size: 2rem;
-    margin-bottom: 0.75rem;
-    color: var(--text-primary);
-}
-
-.community-cta .cta-subtitle {
-    font-size: 1.125rem;
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-    line-height: 1.6;
+.community-cta .section-subtitle {
+    max-width: 500px;
+    margin: 0 auto 2rem;
 }
 
 .community-social-links {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
     flex-wrap: wrap;
+    margin-bottom: 1.5rem;
 }
 
 .community-social-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 2rem;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 8px;
     color: var(--text-primary);
     text-decoration: none;
     font-weight: 500;
+    font-size: 0.9rem;
     transition: var(--transition);
 }
 
@@ -798,18 +786,13 @@ body {
     border-color: var(--accent-primary);
     background: rgba(88, 166, 255, 0.1);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
 }
 
 .community-social-link svg {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     fill: currentColor;
     flex-shrink: 0;
-}
-
-.community-social-link .social-name {
-    font-size: 1rem;
 }
 
 .community-social-link.linkedin:hover {
@@ -818,12 +801,11 @@ body {
 }
 
 .community-social-link.twitter:hover {
-    border-color: #1DA1F2;
-    color: #1DA1F2;
+    border-color: #000;
+    color: var(--text-primary);
 }
 
 .community-cta .cta-note {
-    margin-top: 1.5rem;
     font-size: 0.875rem;
     color: var(--text-secondary);
 }
