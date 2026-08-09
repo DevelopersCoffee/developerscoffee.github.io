@@ -429,38 +429,11 @@ async function init() {
     }
 }
 
-// ===== Site Theme Switcher (Newspaper default / Dark classic) =====
-function initThemeSwitcher() {
-    const label = document.getElementById('theme-select-label');
-    const options = document.querySelectorAll('[data-site-theme-option]');
-
-    const THEME_LABELS = { newspaper: 'Newspaper', bulletin: 'Bulletin', dark: 'Dark' };
-
-    function applyTheme(theme) {
-        document.documentElement.dataset.siteTheme = theme;
-        localStorage.setItem('dc-site-theme', theme);
-        if (label) {
-            label.textContent = THEME_LABELS[theme] || 'Newspaper';
-        }
-    }
-
-    applyTheme(document.documentElement.dataset.siteTheme || 'newspaper');
-
-    options.forEach(opt => {
-        opt.addEventListener('click', (e) => {
-            e.preventDefault();
-            applyTheme(opt.dataset.siteThemeOption);
-        });
-    });
-}
-
 // ===== Start Application =====
+// Day/night theme toggle is handled by scripts/theme-toggle.js (shared
+// with blog post pages) — nothing to wire up here.
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        init();
-        initThemeSwitcher();
-    });
+    document.addEventListener('DOMContentLoaded', init);
 } else {
     init();
-    initThemeSwitcher();
 }

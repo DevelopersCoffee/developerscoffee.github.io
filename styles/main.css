@@ -1,5 +1,5 @@
 /* ===== CSS Variables ===== */
-/* Default theme: Newspaper (warm paper/ink, serif type) */
+/* Light edition: warm paper/ink, serif type */
 :root {
     --bg-primary: #e7e1d1;
     --bg-secondary: #f8f4e8;
@@ -20,45 +20,26 @@
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Theme: Dark (classic GitHub-style, the previous default) */
-[data-site-theme="dark"] {
-    --bg-primary: #0d1117;
-    --bg-secondary: #161b22;
-    --bg-tertiary: #21262d;
-    --text-primary: #c9d1d9;
-    --text-secondary: #8b949e;
-    --accent-primary: #58a6ff;
-    --accent-secondary: #1f6feb;
-    --accent-gradient: linear-gradient(135deg, #58a6ff 0%, #1f6feb 100%);
-    --border-color: #30363d;
-    --success-color: #3fb950;
-    --warning-color: #d29922;
-    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
-}
-
-/* Theme: Bulletin (newspaper structure, developerscoffee.com's brand
-   blue/navy palette, a fresh alternative to the warm paper/maroon Newspaper theme) */
-[data-site-theme="bulletin"] {
-    --bg-primary: #FAFBFC;
-    --bg-secondary: #ffffff;
-    --bg-tertiary: #f2f5f7;
-    --text-primary: #192a3d;
-    --text-secondary: #3A4F66;
-    --accent-primary: #2872fa;
-    --accent-secondary: #1559ed;
-    --accent-gradient: linear-gradient(135deg, #2872fa 0%, #1559ed 100%);
-    --border-color: #e1e8ed;
-    --success-color: #1f9d55;
-    --warning-color: #b7791f;
+/* Dark edition: same newspaper structure, low-glare night palette
+   (not a separate theme family — same masthead/sheet/rule, just recolored,
+   the way a real newspaper's day/night edition works) */
+[data-theme="dark"] {
+    --bg-primary: #17150f;
+    --bg-secondary: #221f19;
+    --bg-tertiary: #2a2520;
+    --text-primary: #d9d0bd;
+    --text-secondary: #b0a790;
+    --accent-primary: #cc9a56;
+    --accent-secondary: #dcae6d;
+    --accent-gradient: linear-gradient(135deg, #cc9a56 0%, #dcae6d 100%);
+    --border-color: rgba(217, 208, 189, 0.16);
+    --success-color: #7bc47f;
+    --warning-color: #dcae6d;
     --font-primary: 'PT Serif', Georgia, 'Times New Roman', serif;
     --font-mono: 'JetBrains Mono', 'Courier New', monospace;
-    --shadow-sm: 0 1px 2px rgba(25, 42, 61, 0.06);
-    --shadow-md: 0 4px 6px rgba(25, 42, 61, 0.08);
-    --shadow-lg: 0 10px 25px rgba(25, 42, 61, 0.12);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.55);
 }
 
 /* ===== Reset & Base Styles ===== */
@@ -153,6 +134,28 @@ body {
     margin: 1.1rem 0 0;
     opacity: 0.85;
 }
+
+/* ===== Day/Night toggle (shared markup with blog post pages) ===== */
+.np-toggle {
+    font-family: var(--font-primary);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    padding: .4rem .7rem;
+    font-size: .68rem;
+    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    transition: var(--transition);
+}
+.np-toggle:hover { background: var(--text-primary); color: var(--bg-secondary); }
+.np-toggle .moon { display: none; }
+[data-theme="dark"] .np-toggle .sun { display: none; }
+[data-theme="dark"] .np-toggle .moon { display: inline-block; }
 
 .nav-links {
     display: flex;

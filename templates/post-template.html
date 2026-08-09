@@ -24,11 +24,7 @@ permalink: /REPLACE-WITH-SLUG/
     <title>REPLACE POST TITLE | Developers Coffee</title>
     <link rel="stylesheet" href="/styles/newspaper.css">
     <script>
-        (function () {
-            var stored = localStorage.getItem("dc-theme");
-            var theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-            document.documentElement.setAttribute("data-theme", theme);
-        })();
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("dc-theme") || "light");
     </script>
 </head>
 <body class="np-body">

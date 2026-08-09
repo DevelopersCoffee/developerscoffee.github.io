@@ -6,9 +6,7 @@
 		root.setAttribute("data-theme", theme);
 	}
 
-	var stored = localStorage.getItem(KEY);
-	var preferred = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-	apply(preferred);
+	apply(localStorage.getItem(KEY) || "light");
 
 	document.addEventListener("DOMContentLoaded", function () {
 		var btn = document.getElementById("np-theme-toggle");
