@@ -23,6 +23,7 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#featured">Featured</a></li>
+                <li><a href="#writing">Blog</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li class="nav-dropdown">
                     <a href="#" class="dropdown-toggle">Docs ▾</a>
@@ -113,6 +114,29 @@
         </div>
     </section>
 
+    <!-- Writing / Blog Section -->
+    <section id="writing" class="section">
+        <div class="container">
+            <h2 class="section-title">Writing</h2>
+            <p class="section-subtitle">Deep dives on what we're building and learning</p>
+            <div class="featured-grid">
+                <a href="/acdc-agentic-verify-solve-poc/" class="featured-card fade-in-up" style="display:block;">
+                    <div class="featured-header">
+                        <div>
+                            <h3 class="featured-title">We put Claude Code inside a deterministic Verify → Solve loop. It caught its own bug.</h3>
+                        </div>
+                    </div>
+                    <p class="featured-description">A real AC/DC (Guide → Verify → Solve) experiment on spring-petclinic: ArchUnit + a local SonarQube quality gate catch an architecture violation, a wrong Spring Boot 4 import, and a bug in our own verification script — before/after in git history.</p>
+                    <div class="featured-tech">
+                        <span class="tech-tag">AI Agents</span>
+                        <span class="tech-tag">SonarQube</span>
+                        <span class="tech-tag">Spring Boot</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- All Projects Section -->
     <section id="projects" class="section projects-section">
         <div class="container">
@@ -144,11 +168,10 @@
             <h2 class="section-title">GitHub Statistics</h2>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <img src="https://github-readme-stats.vercel.app/api?username=DevelopersCoffee&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=1f6feb&text_color=c9d1d9" alt="GitHub Stats" loading="lazy">
+                    <img src="https://github-readme-stats.vercel.app/api?username=DevelopersCoffee&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=1f6feb&text_color=c9d1d9" alt="GitHub Stats" loading="lazy" onerror="this.closest('.stat-card').innerHTML='&lt;p class=\'stat-fallback\'&gt;GitHub stats temporarily unavailable — &lt;a href=\'https://github.com/DevelopersCoffee\' target=\'_blank\'&gt;view on GitHub&lt;/a&gt;&lt;/p&gt;'">
                 </div>
                 <div class="stat-card">
-                    <img src="https://github-readme-streak-stats.herokuapp.com/?user=DevelopersCoffee&theme=tokyonight&hide_border=true&background=0d1117&ring=58a6ff&fire=1f6feb&currStreakLabel=c9d1d9" alt="GitHub Streak Stats" loading="lazy">
-                </div>
+                    <img src="https://github-readme-streak-stats.herokuapp.com/?user=DevelopersCoffee&theme=tokyonight&hide_border=true&background=0d1117&ring=58a6ff&fire=1f6feb&currStreakLabel=c9d1d9" alt="GitHub Streak Stats" loading="lazy" onerror="this.closest('.stat-card').innerHTML='&lt;p class=\'stat-fallback\'&gt;GitHub streak temporarily unavailable — &lt;a href=\'https://github.com/DevelopersCoffee\' target=\'_blank\'&gt;view on GitHub&lt;/a&gt;&lt;/p&gt;'">
             </div>
         </div>
     </section>

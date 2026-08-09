@@ -658,6 +658,17 @@ body {
     display: block;
 }
 
+.stat-fallback {
+    margin: 0;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.stat-fallback a {
+    color: var(--accent-primary);
+}
+
 /* ===== Tech Stack Section ===== */
 .tech-grid {
     display: grid;
