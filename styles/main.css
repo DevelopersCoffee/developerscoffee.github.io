@@ -86,35 +86,72 @@ body {
     padding: 0 2rem;
 }
 
-/* ===== Navigation ===== */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(13, 17, 23, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
-    z-index: 1000;
-    padding: 1rem 0;
+/* ===== Page shell (tdd.cat-style: paper page, floating sheet) ===== */
+.page-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 2rem clamp(1rem, 2.5vw, 2.25rem) 4rem;
 }
 
-.navbar .container {
+.newspaper-sheet {
+    background: var(--bg-secondary);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    padding: 0 clamp(1rem, 3vw, 2.5rem) 2rem;
+}
+
+/* ===== Masthead ===== */
+.masthead {
+    position: relative;
+    text-align: center;
+    padding-top: 1.25rem;
+}
+
+.masthead-eyebrow {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
+    gap: 1rem;
+    padding-bottom: 0.6rem;
+    font-size: 0.78rem;
 }
 
-.nav-brand {
+.masthead-eyebrow-left,
+.masthead-eyebrow-right {
+    flex: 0 0 auto;
+}
+
+.masthead-eyebrow-left .logo {
+    font-size: 1.35rem;
+}
+
+.masthead-nav {
+    flex: 1 1 auto;
     display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 1.25rem;
-    font-weight: 600;
+    justify-content: center;
 }
 
-.logo {
-    font-size: 1.5rem;
+.masthead-name {
+    font-family: var(--font-primary);
+    font-weight: 900;
+    font-size: clamp(2.25rem, 5vw, 3.6rem);
+    margin: 0.75rem 0 0;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+}
+
+.masthead-tagline {
+    font-style: italic;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    margin: 0.35rem 0 0;
+}
+
+.masthead-rule-thick {
+    border: none;
+    border-top: 4px double var(--text-primary);
+    margin: 1.1rem 0 0;
+    opacity: 0.85;
 }
 
 .nav-links {
@@ -196,14 +233,9 @@ body {
     display: none;
 }
 
-/* ===== Hero Section ===== */
+/* ===== Lede (intro paragraph under the masthead) ===== */
 .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8rem 0 4rem;
-    background: radial-gradient(ellipse at top, rgba(88, 166, 255, 0.1) 0%, transparent 50%);
+    padding: 1.5rem 0 2.5rem;
 }
 
 .hero-content {
@@ -873,12 +905,22 @@ body {
 }
 
 /* ===== Footer ===== */
-.footer {
-    background: var(--bg-primary);
-    border-top: 1px solid var(--border-color);
-    padding: 3rem 0;
+.edition-colophon {
+    max-width: 1180px;
+    margin: 0 auto 3rem;
+    padding: 0 clamp(1rem, 2.5vw, 2.25rem);
     text-align: center;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     color: var(--text-secondary);
+}
+
+.edition-colophon .colophon-row {
+    margin-bottom: 0.4rem;
+}
+.edition-colophon .colophon-row:last-child {
+    margin-bottom: 0;
 }
 
 .footer-tagline {
@@ -894,7 +936,19 @@ body {
     }
 
     .hero {
-        padding: 6rem 0 3rem;
+        padding: 1rem 0 2rem;
+    }
+
+    .masthead-eyebrow {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .masthead-nav .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
     }
 
     .section {

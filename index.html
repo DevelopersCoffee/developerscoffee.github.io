@@ -16,48 +16,53 @@
     </script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
+    <main class="page-container">
+    <article class="newspaper-sheet">
+
+    <!-- Masthead -->
+    <header class="masthead">
+        <div class="masthead-eyebrow">
+            <span class="masthead-eyebrow-left">
                 <span class="logo">☕</span>
-                <span class="brand-name">Developers Coffee</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#featured">Featured</a></li>
-                <li><a href="#writing">Blog</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li class="nav-dropdown">
-                    <a href="#" class="dropdown-toggle">Docs ▾</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="https://developerscoffee.github.io/java-cwe-security-skills/" target="_blank">🔐 Security Skills</a></li>
-                    </ul>
-                </li>
-                <li><a href="#stats">Stats</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="nav-dropdown">
+            </span>
+            <nav class="masthead-nav">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#featured">Featured</a></li>
+                    <li><a href="#writing">Blog</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="dropdown-toggle">Docs ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://developerscoffee.github.io/java-cwe-security-skills/" target="_blank">🔐 Security Skills</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#stats">Stats</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <span class="masthead-eyebrow-right">
+                <span class="nav-dropdown">
                     <a href="#" class="dropdown-toggle" id="theme-select-toggle">Theme: <span id="theme-select-label">Newspaper</span> ▾</a>
                     <ul class="dropdown-menu">
                         <li><a href="#" data-site-theme-option="newspaper">📰 Newspaper</a></li>
                         <li><a href="#" data-site-theme-option="bulletin">🔵 Bulletin</a></li>
                         <li><a href="#" data-site-theme-option="dark">🌑 Dark (classic)</a></li>
                     </ul>
-                </li>
-            </ul>
+                </span>
+            </span>
         </div>
-    </nav>
+        <h1 class="masthead-name">Developers Coffee</h1>
+        <p class="masthead-tagline">Brewing Innovation in Code ☕</p>
+        <hr class="masthead-rule-thick">
+    </header>
 
-    <!-- Hero Section -->
+    <!-- Lede -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="gradient-text">Developers Coffee</span>
-                </h1>
-                <p class="hero-subtitle">Brewing Innovation in Code ☕</p>
                 <p class="hero-description">
-                    Building production-ready systems, open-source tools, and innovative solutions 
+                    Building production-ready systems, open-source tools, and innovative solutions
                     with modern technology stacks. From distributed systems to AI-powered applications.
                 </p>
                 <div class="tech-badges">
@@ -286,12 +291,13 @@
         </div>
     </section>
 
+    </article>
+    </main>
+
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Developers Coffee. Brewing innovation in code, one commit at a time.</p>
-            <p class="footer-tagline">Open Source • Community Driven • Production Ready</p>
-        </div>
+    <footer class="edition-colophon">
+        <div class="colophon-row">&copy; 2026 Developers Coffee. Brewing innovation in code, one commit at a time.</div>
+        <div class="colophon-row">Open Source &middot; Community Driven &middot; Production Ready</div>
     </footer>
 
     <script src="scripts/main.js"></script>
