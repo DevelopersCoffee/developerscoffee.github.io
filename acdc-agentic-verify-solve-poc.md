@@ -4,6 +4,7 @@ date: 2026-08-10
 author: Developers Coffee
 tags: [ai-agents, sonarqube, claude-code, spring-boot, quality-gates]
 repo: https://github.com/DevelopersCoffee/acdc-petclinic-poc
+permalink: /acdc-agentic-verify-solve-poc/
 ---
 
 # We put Claude Code inside a deterministic Verify → Solve loop. It caught its own bug.
