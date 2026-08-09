@@ -8,47 +8,41 @@ permalink: /acdc-agentic-verify-solve-poc/
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="We put Claude Code inside a deterministic Guide->Verify->Solve loop on spring-petclinic. It caught an unplanned Spring Boot 4 import bug, a seeded architecture violation, and a bug in our own verification script.">
     <title>We put Claude Code inside a deterministic Verify → Solve loop. It caught its own bug. | Developers Coffee</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        .post-hero { padding: 8rem 0 3rem; }
-        .post-title { font-size: 2.2rem; line-height: 1.25; margin-bottom: 1rem; }
-        .post-meta { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; }
-        .post-meta span:not(:last-child)::after { content: "•"; margin: 0 0.6rem; opacity: 0.5; }
-        .post-body { max-width: 780px; }
-        .post-body h2 { font-size: 1.5rem; margin: 2.5rem 0 1rem; color: var(--text-primary); }
-        .post-body p { margin-bottom: 1.1rem; color: var(--text-primary); }
-        .post-body ul, .post-body ol { margin: 0 0 1.1rem 1.4rem; }
-        .post-body li { margin-bottom: 0.5rem; }
-        .post-body a { color: var(--accent-primary); text-decoration: underline; text-underline-offset: 2px; }
-        .post-body strong { color: var(--text-primary); }
-        .post-body code { font-family: var(--font-mono); background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: 4px; padding: 0.15rem 0.4rem; font-size: 0.88em; }
-        .post-body pre { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem 1.2rem; overflow-x: auto; margin: 1.2rem 0; }
-        .post-body pre code { background: none; border: none; padding: 0; font-size: 0.85rem; line-height: 1.5; }
-        .post-body blockquote { border-left: 3px solid var(--accent-primary); padding: 0.3rem 0 0.3rem 1.2rem; margin: 1.2rem 0; color: var(--text-secondary); }
-        .post-body hr { border: none; border-top: 1px solid var(--border-color); margin: 2.5rem 0; }
-        .callout { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.2rem 1.4rem; margin: 1.5rem 0; }
-        .callout p:last-child { margin-bottom: 0; }
-    </style>
+    <link rel="stylesheet" href="styles/newspaper.css">
+    <script>
+        (function () {
+            var stored = localStorage.getItem("dc-theme");
+            var theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            document.documentElement.setAttribute("data-theme", theme);
+        })();
+    </script>
 </head>
-<body>
-    <nav class="breadcrumb">
-        <div class="container">
-            <a href="index.html#projects" class="breadcrumb-link">← Back to Portfolio</a>
+<body class="np-body">
+
+    <div class="np-masthead-bar">
+        <a href="index.html">← Portfolio</a>
+        <button id="np-theme-toggle" class="np-toggle" aria-label="Toggle day/night edition">
+            <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+            <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+            <span>Day / Night</span>
+        </button>
+    </div>
+
+    <div class="np-wordmark">
+        <a href="index.html">Developers Coffee</a>
+        <span class="np-tagline">Brewing Innovation in Code ☕</span>
+    </div>
+
+    <div class="np-sheet">
+        <div class="np-kicker">AI Agents · Sonar · Spring Boot</div>
+        <h1 class="np-title">We put Claude Code inside a deterministic Verify → Solve loop. It caught its own bug.</h1>
+        <div class="np-byline">
+            <span>By Developers Coffee</span>
+            <span>Aug 10, 2026</span>
+            <span>7 min read</span>
         </div>
-    </nav>
 
-    <section class="post-hero">
-        <div class="container post-body">
-            <h1 class="post-title">We put Claude Code inside a deterministic Verify → Solve loop. It caught its own bug.</h1>
-            <div class="post-meta">
-                <span>Aug 10, 2026</span>
-                <span>Developers Coffee</span>
-                <span>AI Agents / SonarQube / Spring Boot</span>
-            </div>
-
+        <div class="np-article">
             <p>Everyone's shipping AI-generated PRs faster than anyone can review them.
             The <a href="https://www.sonarsource.com/agent-centric-development/" target="_blank">AC/DC framework</a>
             (Sonar's "Agent Centric Development Cycle") argues the fix isn't more
@@ -60,7 +54,7 @@ permalink: /acdc-agentic-verify-solve-poc/
             built the smallest version that could prove or disprove it, on a real
             codebase, in one afternoon.</p>
 
-            <div class="callout">
+            <div class="np-callout">
                 <p><strong>Repo:</strong> <a href="https://github.com/DevelopersCoffee/acdc-petclinic-poc" target="_blank">github.com/DevelopersCoffee/acdc-petclinic-poc</a>
                 — forked from <a href="https://github.com/spring-projects/spring-petclinic" target="_blank">spring-petclinic</a>,
                 every stage is a real, readable commit.</p>
@@ -181,32 +175,12 @@ docker compose -f docker-compose.sonar.yml up -d   # SonarQube on :9000
 ./verify.sh</code></pre>
             <p><a href="https://github.com/DevelopersCoffee/acdc-petclinic-poc" target="_blank">github.com/DevelopersCoffee/acdc-petclinic-poc</a></p>
         </div>
-    </section>
 
-    <section class="section community-cta">
-        <div class="container">
-            <h2 class="section-title">Join Our Community</h2>
-            <p class="section-subtitle">Stay updated on open-source projects and engineering insights</p>
-            <div class="community-social-links">
-                <a href="https://www.linkedin.com/company/developerscoffee/" target="_blank" class="community-social-link linkedin">
-                    <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                    LinkedIn
-                </a>
-                <a href="https://x.com/DevlopersCoffee" target="_blank" class="community-social-link twitter">
-                    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                    X (Twitter)
-                </a>
-            </div>
-            <p class="cta-note">🚀 <a href="https://github.com/DevelopersCoffee" target="_blank">Contribute to our projects on GitHub</a></p>
+        <div class="np-footer">
+            <p>&copy; 2026 Developers Coffee · <a href="https://github.com/DevelopersCoffee" target="_blank">GitHub</a> · <a href="https://www.linkedin.com/company/developerscoffee/" target="_blank">LinkedIn</a></p>
         </div>
-    </section>
+    </div>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Developers Coffee. Brewing Innovation in Code ☕</p>
-        </div>
-    </footer>
-
-    <script src="scripts/main.js"></script>
+    <script src="scripts/theme-toggle.js"></script>
 </body>
 </html>

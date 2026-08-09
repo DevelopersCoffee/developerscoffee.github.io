@@ -1,0 +1,83 @@
+---
+permalink: /REPLACE-WITH-SLUG/
+---
+<!--
+  Developers Coffee blog post template — newspaper theme.
+
+  How to use for a new post:
+  1. Copy this file to /<slug>.html at the repo root (not inside templates/).
+  2. Set the permalink above to /<slug>/.
+  3. Fill in <title>, meta description, kicker, title, byline, and the
+     .np-article body.
+  4. Keep the <link rel="stylesheet" href="styles/newspaper.css"> and the
+     inline theme-init <script> + closing <script src="scripts/theme-toggle.js">
+     — both are shared across every post, don't duplicate/fork them per post.
+  5. Add the post to index.html's project/post listing if it should be
+     discoverable from the homepage.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="REPLACE — one or two sentences, used for search + social previews.">
+    <title>REPLACE POST TITLE | Developers Coffee</title>
+    <link rel="stylesheet" href="styles/newspaper.css">
+    <script>
+        (function () {
+            var stored = localStorage.getItem("dc-theme");
+            var theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            document.documentElement.setAttribute("data-theme", theme);
+        })();
+    </script>
+</head>
+<body class="np-body">
+
+    <div class="np-masthead-bar">
+        <a href="index.html">← Portfolio</a>
+        <button id="np-theme-toggle" class="np-toggle" aria-label="Toggle day/night edition">
+            <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+            <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+            <span>Day / Night</span>
+        </button>
+    </div>
+
+    <div class="np-wordmark">
+        <a href="index.html">Developers Coffee</a>
+        <span class="np-tagline">Brewing Innovation in Code ☕</span>
+    </div>
+
+    <div class="np-sheet">
+        <div class="np-kicker">REPLACE · Category / Tags</div>
+        <h1 class="np-title">REPLACE POST TITLE</h1>
+        <div class="np-byline">
+            <span>By Developers Coffee</span>
+            <span>REPLACE DATE</span>
+            <span>REPLACE READ TIME</span>
+        </div>
+
+        <div class="np-article">
+            <p>REPLACE — first paragraph. First letter of the first
+            paragraph gets an automatic drop-cap from .np-article's CSS,
+            no markup needed.</p>
+
+            <h2>A section heading</h2>
+            <p>Body copy. Use <code>&lt;code&gt;</code> for inline code,
+            <code>&lt;pre&gt;&lt;code&gt;</code> for blocks, and
+            <code>&lt;blockquote&gt;</code> for quotes — all styled by
+            newspaper.css already.</p>
+
+            <div class="np-callout">
+                <p>Use .np-callout for a boxed aside (links, repo
+                pointers, TL;DR).</p>
+            </div>
+        </div>
+
+        <div class="np-footer">
+            <p>&copy; 2026 Developers Coffee · <a href="https://github.com/DevelopersCoffee" target="_blank">GitHub</a> · <a href="https://www.linkedin.com/company/developerscoffee/" target="_blank">LinkedIn</a></p>
+        </div>
+    </div>
+
+    <script src="scripts/theme-toggle.js"></script>
+</body>
+</html>
