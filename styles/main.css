@@ -1,5 +1,27 @@
 /* ===== CSS Variables ===== */
+/* Default theme: Newspaper (warm paper/ink, serif type) */
 :root {
+    --bg-primary: #e7e1d1;
+    --bg-secondary: #f8f4e8;
+    --bg-tertiary: #efe8d4;
+    --text-primary: #1b1a17;
+    --text-secondary: #7c7563;
+    --accent-primary: #8a1f11;
+    --accent-secondary: #6b170c;
+    --accent-gradient: linear-gradient(135deg, #8a1f11 0%, #6b170c 100%);
+    --border-color: rgba(32, 30, 25, 0.16);
+    --success-color: #3f7d3f;
+    --warning-color: #a1720f;
+    --font-primary: 'PT Serif', Georgia, 'Times New Roman', serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+    --shadow-sm: 0 1px 2px rgba(27, 26, 23, 0.08);
+    --shadow-md: 0 4px 6px rgba(27, 26, 23, 0.12);
+    --shadow-lg: 0 10px 25px rgba(27, 26, 23, 0.18);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Theme: Dark (classic GitHub-style, the previous default) */
+[data-site-theme="dark"] {
     --bg-primary: #0d1117;
     --bg-secondary: #161b22;
     --bg-tertiary: #21262d;
@@ -16,7 +38,6 @@
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ===== Reset & Base Styles ===== */

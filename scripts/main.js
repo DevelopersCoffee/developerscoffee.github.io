@@ -429,9 +429,36 @@ async function init() {
     }
 }
 
+// ===== Site Theme Switcher (Newspaper default / Dark classic) =====
+function initThemeSwitcher() {
+    const label = document.getElementById('theme-select-label');
+    const options = document.querySelectorAll('[data-site-theme-option]');
+
+    function applyTheme(theme) {
+        document.documentElement.dataset.siteTheme = theme;
+        localStorage.setItem('dc-site-theme', theme);
+        if (label) {
+            label.textContent = theme === 'dark' ? 'Dark' : 'Newspaper';
+        }
+    }
+
+    applyTheme(document.documentElement.dataset.siteTheme || 'newspaper');
+
+    options.forEach(opt => {
+        opt.addEventListener('click', (e) => {
+            e.preventDefault();
+            applyTheme(opt.dataset.siteThemeOption);
+        });
+    });
+}
+
 // ===== Start Application =====
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', () => {
+        init();
+        initThemeSwitcher();
+    });
 } else {
     init();
+    initThemeSwitcher();
 }
