@@ -41,7 +41,7 @@
 }
 
 /* Theme: Bulletin (newspaper structure, developerscoffee.com's brand
-   blue/navy palette instead of tdd.cat's paper/maroon) */
+   blue/navy palette, a fresh alternative to the warm paper/maroon Newspaper theme) */
 [data-site-theme="bulletin"] {
     --bg-primary: #FAFBFC;
     --bg-secondary: #ffffff;
@@ -86,7 +86,7 @@ body {
     padding: 0 2rem;
 }
 
-/* ===== Page shell (tdd.cat-style: paper page, floating sheet) ===== */
+/* ===== Page shell (paper page, floating sheet) ===== */
 .page-container {
     max-width: 1180px;
     margin: 0 auto;
