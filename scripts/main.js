@@ -434,11 +434,13 @@ function initThemeSwitcher() {
     const label = document.getElementById('theme-select-label');
     const options = document.querySelectorAll('[data-site-theme-option]');
 
+    const THEME_LABELS = { newspaper: 'Newspaper', bulletin: 'Bulletin', dark: 'Dark' };
+
     function applyTheme(theme) {
         document.documentElement.dataset.siteTheme = theme;
         localStorage.setItem('dc-site-theme', theme);
         if (label) {
-            label.textContent = theme === 'dark' ? 'Dark' : 'Newspaper';
+            label.textContent = THEME_LABELS[theme] || 'Newspaper';
         }
     }
 
