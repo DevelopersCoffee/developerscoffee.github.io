@@ -1,0 +1,212 @@
+---
+permalink: /acdc-agentic-verify-solve-poc/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="We put Claude Code inside a deterministic Guide->Verify->Solve loop on spring-petclinic. It caught an unplanned Spring Boot 4 import bug, a seeded architecture violation, and a bug in our own verification script.">
+    <title>We put Claude Code inside a deterministic Verify → Solve loop. It caught its own bug. | Developers Coffee</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        .post-hero { padding: 8rem 0 3rem; }
+        .post-title { font-size: 2.2rem; line-height: 1.25; margin-bottom: 1rem; }
+        .post-meta { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .post-meta span:not(:last-child)::after { content: "•"; margin: 0 0.6rem; opacity: 0.5; }
+        .post-body { max-width: 780px; }
+        .post-body h2 { font-size: 1.5rem; margin: 2.5rem 0 1rem; color: var(--text-primary); }
+        .post-body p { margin-bottom: 1.1rem; color: var(--text-primary); }
+        .post-body ul, .post-body ol { margin: 0 0 1.1rem 1.4rem; }
+        .post-body li { margin-bottom: 0.5rem; }
+        .post-body a { color: var(--accent-primary); text-decoration: underline; text-underline-offset: 2px; }
+        .post-body strong { color: var(--text-primary); }
+        .post-body code { font-family: var(--font-mono); background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: 4px; padding: 0.15rem 0.4rem; font-size: 0.88em; }
+        .post-body pre { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem 1.2rem; overflow-x: auto; margin: 1.2rem 0; }
+        .post-body pre code { background: none; border: none; padding: 0; font-size: 0.85rem; line-height: 1.5; }
+        .post-body blockquote { border-left: 3px solid var(--accent-primary); padding: 0.3rem 0 0.3rem 1.2rem; margin: 1.2rem 0; color: var(--text-secondary); }
+        .post-body hr { border: none; border-top: 1px solid var(--border-color); margin: 2.5rem 0; }
+        .callout { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.2rem 1.4rem; margin: 1.5rem 0; }
+        .callout p:last-child { margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="index.html#projects" class="breadcrumb-link">← Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <section class="post-hero">
+        <div class="container post-body">
+            <h1 class="post-title">We put Claude Code inside a deterministic Verify → Solve loop. It caught its own bug.</h1>
+            <div class="post-meta">
+                <span>Aug 10, 2026</span>
+                <span>Developers Coffee</span>
+                <span>AI Agents / SonarQube / Spring Boot</span>
+            </div>
+
+            <p>Everyone's shipping AI-generated PRs faster than anyone can review them.
+            The <a href="https://www.sonarsource.com/agent-centric-development/" target="_blank">AC/DC framework</a>
+            (Sonar's "Agent Centric Development Cycle") argues the fix isn't more
+            human review — it's <strong>constraints around the agent</strong>: Guide it with
+            context, Verify every change deterministically, Solve failures by feeding
+            findings back in, repeat until a quality gate says yes.</p>
+
+            <p>That's a good pitch. We didn't want to take Sonar's word for it, so we
+            built the smallest version that could prove or disprove it, on a real
+            codebase, in one afternoon.</p>
+
+            <div class="callout">
+                <p><strong>Repo:</strong> <a href="https://github.com/DevelopersCoffee/acdc-petclinic-poc" target="_blank">github.com/DevelopersCoffee/acdc-petclinic-poc</a>
+                — forked from <a href="https://github.com/spring-projects/spring-petclinic" target="_blank">spring-petclinic</a>,
+                every stage is a real, readable commit.</p>
+            </div>
+
+            <h2>The setup, in one sentence</h2>
+            <p>Claude Code implements a feature under a <code>CLAUDE.md</code> rulebook; a script
+            (<code>verify.sh</code>) runs Maven + ArchUnit + a local SonarQube quality gate
+            after every change; if it fails, findings go back to Claude; repeat until
+            green. No human touches the code in between.</p>
+
+            <h2>What we asked for</h2>
+            <blockquote>
+                <p>Add <code>GET /api/orders?customerId={id}</code> — paginated, validated, service
+                layer holds logic, repository handles persistence, tests required,
+                don't touch existing endpoints, don't add dependencies unless needed.</p>
+            </blockquote>
+
+            <h2>Commit 1 — the rules (CLAUDE.md + ArchUnit)</h2>
+            <p>Before generating anything, we wrote down what "correct" means in a file
+            Claude reads every session: Controller → Service → Repository, no SQL
+            string concatenation, validate external input, correct HTTP status
+            codes, tests required for new logic.</p>
+
+            <p>Then we made one of those rules <em>executable</em>: an
+            <a href="https://www.archunit.org/" target="_blank">ArchUnit</a> test that fails the build if a new
+            <code>@RestController</code> depends on a <code>@Repository</code> directly.</p>
+
+            <p>One catch worth calling out: <strong>upstream spring-petclinic has no service
+            layer.</strong> Its own Controllers call Repositories directly, everywhere.
+            Applying our rule repo-wide would've failed on Spring's own reference
+            code. So we scoped the ArchUnit rule to the new <code>order</code> package only —
+            the way real teams actually adopt architecture fitness functions: new
+            code held to a higher bar, legacy debt frozen, not retrofitted mid-task.
+            <a href="https://github.com/DevelopersCoffee/acdc-petclinic-poc/commit/ca28256" target="_blank">→ commit</a></p>
+
+            <h2>Commit 2 — the "before": code that breaks its own rules</h2>
+            <p>We had Claude generate the feature once, deliberately unconstrained,
+            to see what the loop was actually up against:</p>
+            <ul>
+                <li><code>OrderController</code> injected <code>OrderRepository</code> directly — skipped the service layer.</li>
+                <li>A bonus <code>/api/orders/raw-lookup</code> endpoint built SQL by string concatenation from a request parameter.</li>
+                <li>Missing <code>customerId</code> returned <code>200 OK</code> with an empty page instead of <code>400</code>.</li>
+                <li>Only a repository test existed — no controller or service coverage.</li>
+            </ul>
+            <p><a href="https://github.com/DevelopersCoffee/acdc-petclinic-poc/commit/92e4985" target="_blank">→ commit (the "before")</a></p>
+
+            <h2>Running Verify — and a surprise before the seeded bugs even mattered</h2>
+            <pre><code>./verify.sh</code></pre>
+            <p>First failure wasn't one of the ones we planted. It was a <strong>compile
+            error</strong>: the test imported
+            <code>org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest</code>, which
+            doesn't exist in Spring Boot 4.1 — the package moved. Claude had guessed
+            a plausible-looking, wrong import for an API surface it hadn't actually
+            verified.</p>
+
+            <p>That's the whole argument for the loop in one data point: a
+            plausible-looking wrong answer, caught before it became a runtime
+            <code>ClassNotFoundException</code> in someone's PR.</p>
+
+            <p>Fixed the import, re-ran. This time ArchUnit fired exactly as designed:</p>
+            <pre><code>{
+  "type": "ARCHITECTURE",
+  "message": "controllersMustNotAccessRepositoriesDirectly: ... was violated (3 times)"
+}</code></pre>
+
+            <h2>Commit 3 — the "after": Solve, driven entirely by findings.json</h2>
+            <ul>
+                <li>Extracted <code>OrderService</code>; the controller now depends on it, not the repository. Root-cause fix, not a suppression.</li>
+                <li><strong>Deleted</strong> <code>/api/orders/raw-lookup</code> — it was never in the requested API contract. <code>CLAUDE.md</code> says "keep changes scoped"; the correct fix for scope creep is deletion, not patching the SQL injection in place.</li>
+                <li><code>searchOrders</code> now returns <code>400</code> for missing/invalid <code>customerId</code>.</li>
+                <li>Added <code>OrderServiceTests</code> and <code>OrderControllerTests</code> — happy path + edge cases.</li>
+            </ul>
+            <p><a href="https://github.com/DevelopersCoffee/acdc-petclinic-poc/commit/1e08aa9" target="_blank">→ commit (the "after")</a></p>
+
+            <h2>The loop caught its own bug too</h2>
+            <p>Third Verify run: build passed, Sonar scan passed, <strong>gate still failed —
+            with zero findings.</strong> That's worse than a clear failure; it's a
+            verification layer lying about why.</p>
+
+            <p>Turned out our own <code>collect_findings.py</code> was querying Sonar's issues API
+            with <code>sinceLeakPeriod=true</code> — a parameter that doesn't scope to new code
+            on SonarQube 26.x anymore (<code>inNewCodePeriod=true</code> is current). It was
+            silently returning dozens of <em>pre-existing</em> findings from legacy code,
+            which would've sent the agent chasing the wrong problem entirely.</p>
+
+            <p>We fixed the harness itself, re-ran, and found the real cause: new-code
+            coverage at 69.7% (needed 80%) plus an unused import and a lambda code
+            smell. Fixed those. Final result:</p>
+            <pre><code>mvn clean verify : PASS
+sonar:sonar       : PASS
+quality gate      : OK   (new_violations: 0, new_coverage: 100%, new_duplicated_lines_density: 0%)</code></pre>
+            <p>55/55 tests passing (46 baseline + 9 new).</p>
+
+            <h2>Why this is the actual selling point</h2>
+            <p>Not "the agent wrote working code" — agents do that constantly and it's
+            not news. The finding is narrower and more useful:</p>
+            <ol>
+                <li><strong>A wrong-but-plausible answer got caught before it shipped</strong>, purely because a deterministic gate ran before a human looked at anything.</li>
+                <li><strong>The rule that mattered most (architecture) didn't exist as a rule until we wrote it down and made it executable.</strong> CLAUDE.md alone is a suggestion; ArchUnit made it a gate.</li>
+                <li><strong>The verification layer had its own bug</strong>, and the same loop structure — fail loud, read the actual output, fix the root cause — applied to fixing <em>our</em> harness, not just the agent's code. If your Verify stage can lie, your Solve stage will "fix" the wrong thing.</li>
+                <li><strong>Scoping matters more than strictness.</strong> A rule applied blindly (architecture, repo-wide) would have failed on code we didn't write and couldn't fix without an unrelated refactor. Scoped to new code, the same rule was useful instead of noise.</li>
+            </ol>
+
+            <h2>What this doesn't prove</h2>
+            <p>One feature, one repo, one session. We didn't run a blind "no-loop"
+            control group — for that to mean anything, a different reviewer would
+            need to grade the same task without seeing the Verify findings, so we
+            haven't claimed a before/after defect-rate number. If you want to check
+            our work, the whole thing — including the commit where the agent got an
+            import wrong and the commit where our own script lied about <em>why</em> — is
+            public.</p>
+
+            <h2>Try it yourself</h2>
+            <pre><code>git clone git@github.com:DevelopersCoffee/acdc-petclinic-poc.git
+cd acdc-petclinic-poc
+docker compose -f docker-compose.sonar.yml up -d   # SonarQube on :9000
+./verify.sh</code></pre>
+            <p><a href="https://github.com/DevelopersCoffee/acdc-petclinic-poc" target="_blank">github.com/DevelopersCoffee/acdc-petclinic-poc</a></p>
+        </div>
+    </section>
+
+    <section class="section community-cta">
+        <div class="container">
+            <h2 class="section-title">Join Our Community</h2>
+            <p class="section-subtitle">Stay updated on open-source projects and engineering insights</p>
+            <div class="community-social-links">
+                <a href="https://www.linkedin.com/company/developerscoffee/" target="_blank" class="community-social-link linkedin">
+                    <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    LinkedIn
+                </a>
+                <a href="https://x.com/DevlopersCoffee" target="_blank" class="community-social-link twitter">
+                    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    X (Twitter)
+                </a>
+            </div>
+            <p class="cta-note">🚀 <a href="https://github.com/DevelopersCoffee" target="_blank">Contribute to our projects on GitHub</a></p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Developers Coffee. Brewing Innovation in Code ☕</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
