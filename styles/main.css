@@ -9,6 +9,7 @@
     --accent-primary: #8a1f11;
     --accent-secondary: #6b170c;
     --accent-gradient: linear-gradient(135deg, #8a1f11 0%, #6b170c 100%);
+    --accent-glow: rgba(138, 31, 17, 0.08);
     --border-color: rgba(32, 30, 25, 0.16);
     --success-color: #3f7d3f;
     --warning-color: #a1720f;
@@ -32,6 +33,7 @@
     --accent-primary: #cc9a56;
     --accent-secondary: #dcae6d;
     --accent-gradient: linear-gradient(135deg, #cc9a56 0%, #dcae6d 100%);
+    --accent-glow: rgba(204, 154, 86, 0.12);
     --border-color: rgba(217, 208, 189, 0.16);
     --success-color: #7bc47f;
     --warning-color: #dcae6d;
@@ -201,7 +203,7 @@ body {
     left: 0;
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 2px;
     padding: 0.5rem 0;
     min-width: 200px;
     opacity: 0;
@@ -286,7 +288,7 @@ body {
     padding: 0.5rem 1rem;
     background: var(--bg-tertiary);
     border: 1px solid var(--border-color);
-    border-radius: 20px;
+    border-radius: 2px;
     font-size: 0.875rem;
     font-weight: 500;
     transition: var(--transition);
@@ -310,7 +312,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     padding: 0.875rem 1.75rem;
-    border-radius: 8px;
+    border-radius: 2px;
     font-weight: 600;
     text-decoration: none;
     transition: var(--transition);
@@ -337,7 +339,7 @@ body {
 }
 
 .btn-secondary:hover {
-    background: rgba(88, 166, 255, 0.1);
+    background: var(--accent-glow);
     transform: translateY(-2px);
 }
 
@@ -389,7 +391,7 @@ body {
     padding: 2rem;
     background: var(--bg-tertiary);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 2px;
     transition: var(--transition);
 }
 
@@ -426,33 +428,16 @@ body {
 .featured-card {
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    border-top: 3px solid var(--accent-primary);
+    border-radius: 2px;
     padding: 2rem;
     transition: var(--transition);
     position: relative;
-    overflow: hidden;
-}
-
-.featured-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--accent-gradient);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-.featured-card:hover::before {
-    transform: scaleX(1);
 }
 
 .featured-card:hover {
     border-color: var(--accent-primary);
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-md);
 }
 
 .featured-header {
@@ -463,8 +448,9 @@ body {
 }
 
 .featured-title {
+    font-family: var(--font-primary);
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 0.5rem;
 }
@@ -472,7 +458,9 @@ body {
 .featured-stats {
     display: flex;
     gap: 1rem;
-    font-size: 0.875rem;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
     color: var(--text-secondary);
 }
 
@@ -499,18 +487,18 @@ body {
     padding: 0.25rem 0.75rem;
     background: var(--bg-tertiary);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 2px;
     font-size: 0.75rem;
     font-family: var(--font-mono);
     color: var(--accent-primary);
 }
 
 .featured-impact {
-    background: rgba(88, 166, 255, 0.1);
+    background: var(--bg-tertiary);
     border-left: 3px solid var(--accent-primary);
     padding: 1rem;
     margin-bottom: 1.5rem;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .impact-label {
@@ -560,7 +548,7 @@ body {
     padding: 0.875rem 1.25rem;
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 2px;
     color: var(--text-primary);
     font-size: 1rem;
     transition: var(--transition);
@@ -569,7 +557,7 @@ body {
 .search-box input:focus {
     outline: none;
     border-color: var(--accent-primary);
-    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+    box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
 .filter-tabs {
@@ -577,7 +565,7 @@ body {
     gap: 0.5rem;
     background: var(--bg-secondary);
     padding: 0.5rem;
-    border-radius: 8px;
+    border-radius: 2px;
     border: 1px solid var(--border-color);
 }
 
@@ -611,7 +599,7 @@ body {
 .repo-card {
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 2px;
     padding: 1.5rem;
     transition: var(--transition);
     display: flex;
@@ -620,7 +608,6 @@ body {
 
 .repo-card:hover {
     border-color: var(--accent-primary);
-    transform: translateY(-3px);
     box-shadow: var(--shadow-md);
 }
 
@@ -780,7 +767,7 @@ body {
 .stat-card {
     background: var(--bg-tertiary);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 2px;
     padding: 1rem;
     overflow: hidden;
 }
@@ -813,7 +800,7 @@ body {
 .tech-category {
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 2px;
     padding: 2rem;
     transition: var(--transition);
 }
@@ -840,14 +827,14 @@ body {
     padding: 0.75rem 1rem;
     background: var(--bg-tertiary);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 2px;
     transition: var(--transition);
     font-weight: 500;
 }
 
 .tech-item:hover {
     border-color: var(--accent-primary);
-    background: rgba(88, 166, 255, 0.1);
+    background: var(--accent-glow);
     transform: translateX(5px);
 }
 
@@ -873,7 +860,7 @@ body {
     padding: 1.5rem;
     background: var(--bg-tertiary);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 2px;
     color: var(--text-primary);
     text-decoration: none;
     transition: var(--transition);
@@ -882,7 +869,7 @@ body {
 
 .contact-link:hover {
     border-color: var(--accent-primary);
-    background: rgba(88, 166, 255, 0.1);
+    background: var(--accent-glow);
     transform: translateY(-3px);
 }
 
@@ -918,7 +905,7 @@ body {
     padding: 0.75rem 1.5rem;
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 2px;
     color: var(--text-primary);
     text-decoration: none;
     font-weight: 500;
@@ -928,7 +915,7 @@ body {
 
 .community-social-link:hover {
     border-color: var(--accent-primary);
-    background: rgba(88, 166, 255, 0.1);
+    background: var(--accent-glow);
     transform: translateY(-2px);
 }
 
