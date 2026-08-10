@@ -596,6 +596,17 @@ body {
     gap: 1.5rem;
 }
 
+.repos-more-note {
+    text-align: center;
+    padding-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.repos-more-note a {
+    color: var(--accent-primary);
+}
+
 .repo-card {
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
