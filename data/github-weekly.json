@@ -1,25 +1,25 @@
 {
-  "generatedAt": "2026-08-10T00:03:33Z",
-  "weekStart": "2026-08-03T00:03:33Z",
+  "generatedAt": "2026-08-10T07:20:31Z",
+  "weekStart": "2026-08-03T07:20:31Z",
   "organization": "DevelopersCoffee",
   "updatedRepos": [
-    {
-      "name": "developerscoffee.github.io",
-      "url": "https://github.com/DevelopersCoffee/developerscoffee.github.io",
-      "description": null,
-      "pushedAt": "2026-08-10T00:03:04Z"
-    },
     {
       "name": "airo",
       "url": "https://github.com/DevelopersCoffee/airo",
       "description": "Airo - open-source super app: AI chat, personal finance, TV & music, games, reading. Local-first, Flutter. Includes Airo TV for Android TV.",
-      "pushedAt": "2026-08-09T19:54:48Z"
+      "pushedAt": "2026-08-10T01:42:40Z"
+    },
+    {
+      "name": "developerscoffee.github.io",
+      "url": "https://github.com/DevelopersCoffee/developerscoffee.github.io",
+      "description": null,
+      "pushedAt": "2026-08-10T01:05:07Z"
     },
     {
       "name": "acdc-petclinic-poc",
       "url": "https://github.com/DevelopersCoffee/acdc-petclinic-poc",
       "description": "AC/DC POC: Claude Code inside a deterministic Guide->Verify->Solve loop on spring-petclinic. ArchUnit + SonarQube quality gate catches real violations and drives fixes \u2014 before/after in git history.",
-      "pushedAt": "2026-08-09T19:42:35Z"
+      "pushedAt": "2026-08-10T00:12:59Z"
     }
   ],
   "newReleases": [

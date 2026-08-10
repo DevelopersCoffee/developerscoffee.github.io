@@ -1,25 +1,7 @@
 {
-  "generatedAt": "2026-08-10T00:03:33Z",
+  "generatedAt": "2026-08-10T07:20:31Z",
   "organization": "DevelopersCoffee",
   "repositories": [
-    {
-      "name": "developerscoffee.github.io",
-      "fullName": "DevelopersCoffee/developerscoffee.github.io",
-      "description": null,
-      "url": "https://github.com/DevelopersCoffee/developerscoffee.github.io",
-      "homepage": null,
-      "language": "HTML",
-      "topics": [],
-      "stars": 0,
-      "forks": 0,
-      "openIssues": 0,
-      "defaultBranch": "main",
-      "createdAt": "2020-10-24T07:59:30Z",
-      "updatedAt": "2026-08-10T00:03:10Z",
-      "pushedAt": "2026-08-10T00:03:04Z",
-      "archived": false,
-      "latestRelease": null
-    },
     {
       "name": "airo",
       "fullName": "DevelopersCoffee/airo",
@@ -48,11 +30,11 @@
       ],
       "stars": 10,
       "forks": 1,
-      "openIssues": 306,
+      "openIssues": 300,
       "defaultBranch": "main",
       "createdAt": "2025-10-07T21:36:54Z",
-      "updatedAt": "2026-08-09T19:34:27Z",
-      "pushedAt": "2026-08-09T19:54:48Z",
+      "updatedAt": "2026-08-10T01:23:35Z",
+      "pushedAt": "2026-08-10T01:42:40Z",
       "archived": false,
       "latestRelease": {
         "tag": "v0.0.6",
@@ -62,6 +44,24 @@
         "prerelease": false,
         "body": "# Airo 0.0.6\n\nThis v2 release publishes the selected Android and macOS profile artifacts produced by the release orchestrator.\n\n## Included Artifacts\n\n- Airo-0.0.6-10-Play-Store.aab\n- Airo-0.0.6-10-arm64.apk\n- Airo-0.0.6-Release-Manifest.json\n- Airo-TV-0.0.6-Play-Store.aab\n- Airo-TV-0.0.6-arm64-v8a.apk\n- Airo-TV-0.0.6-armeabi-v7a.apk\n- Airo-TV-0.0.6-macOS.dmg\n- Airo-TV-0.0.6-macOS.zip\n- Airo-TV-0.0.6-x86_64.apk\n- Airo-TV-0.0.6.apk\n- AiroCoins-0.0.6-10-Play-Store.aab\n- AiroCoins-0.0.6-10-arm64.ap"
       }
+    },
+    {
+      "name": "developerscoffee.github.io",
+      "fullName": "DevelopersCoffee/developerscoffee.github.io",
+      "description": null,
+      "url": "https://github.com/DevelopersCoffee/developerscoffee.github.io",
+      "homepage": null,
+      "language": "HTML",
+      "topics": [],
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 0,
+      "defaultBranch": "main",
+      "createdAt": "2020-10-24T07:59:30Z",
+      "updatedAt": "2026-08-10T01:05:12Z",
+      "pushedAt": "2026-08-10T01:05:07Z",
+      "archived": false,
+      "latestRelease": null
     },
     {
       "name": "acdc-petclinic-poc",
@@ -83,8 +83,8 @@
       "openIssues": 0,
       "defaultBranch": "main",
       "createdAt": "2026-08-09T19:39:25Z",
-      "updatedAt": "2026-08-09T19:42:56Z",
-      "pushedAt": "2026-08-09T19:42:35Z",
+      "updatedAt": "2026-08-10T00:13:14Z",
+      "pushedAt": "2026-08-10T00:12:59Z",
       "archived": false,
       "latestRelease": null
     },
