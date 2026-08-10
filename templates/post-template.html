@@ -2,17 +2,23 @@
 permalink: /REPLACE-WITH-SLUG/
 ---
 <!--
-  Developers Coffee blog post template — newspaper theme.
+  Developers Coffee blog post template — tdd.cat-style newspaper theme.
+  Markup/classes are transplanted from The Daily Diff (MIT, github.com/
+  arpitbbhayani/the-daily-diff) so every post looks identical: masthead,
+  double rule, drop-shadow sheet, lead-story headline treatment.
 
   How to use for a new post:
   1. Copy this file to /<slug>.html at the repo root (not inside templates/).
   2. Set the permalink above to /<slug>/.
-  3. Fill in <title>, meta description, kicker, title, byline, and the
-     .np-article body.
-  4. Keep the <link rel="stylesheet" href="/styles/newspaper.css"> and the
-     inline theme-init <script> + closing <script src="/scripts/theme-toggle.js">
-     — both are shared across every post, don't duplicate/fork them per post.
-  5. Add the post to index.html's project/post listing if it should be
+  3. Fill in <title>, meta description, story-headline, story-byline, and
+     the .story-body content.
+  4. Keep the shared <link rel="stylesheet" href="/styles/newspaper.css">
+     and <script src="/scripts/theme-toggle.js"> — don't fork per post.
+  5. All internal links/assets must be root-relative (leading "/") because
+     the page's permalink ends in a trailing slash — a relative path like
+     "styles/newspaper.css" resolves under that as a pseudo-directory and
+     404s.
+  6. Add the post to index.html's project/post listing if it should be
      discoverable from the homepage.
 -->
 <!DOCTYPE html>
@@ -24,55 +30,66 @@ permalink: /REPLACE-WITH-SLUG/
     <title>REPLACE POST TITLE | Developers Coffee</title>
     <link rel="stylesheet" href="/styles/newspaper.css">
     <script>
-        document.documentElement.setAttribute("data-theme", localStorage.getItem("dc-theme") || "light");
+        document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
     </script>
 </head>
 <body class="np-body">
+    <main class="page-container">
+        <article class="newspaper-sheet">
 
-    <div class="np-masthead-bar">
-        <a href="/index.html">← Portfolio</a>
-        <button id="np-theme-toggle" class="np-toggle" aria-label="Toggle day/night edition">
-            <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
-            <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
-            <span>Day / Night</span>
-        </button>
-    </div>
+            <header class="masthead">
+                <div class="masthead-eyebrow">
+                    <span class="masthead-eyebrow-left">
+                        <a href="/index.html" class="masthead-archive-link" aria-label="Back to portfolio" title="Back to portfolio">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg>
+                            <span>Portfolio</span>
+                        </a>
+                        <span class="masthead-eyebrow-sep">&middot;</span>
+                        <a class="masthead-eyebrow-link" href="/index.html" rel="noopener noreferrer">developerscoffee.com</a>
+                    </span>
+                    <span></span>
+                    <span class="masthead-eyebrow-right">
+                        <button id="theme-toggle" class="rail-btn" aria-label="Toggle Day/Night Edition" data-tooltip="Toggle Day/Night Edition">
+                            <span class="theme-toggle-icon">
+                                <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+                                <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+                            </span>
+                        </button>
+                    </span>
+                </div>
+                <h1 class="masthead-name">Developers Coffee</h1>
+                <p class="masthead-tagline">Brewing Innovation in Code ☕</p>
+                <hr class="masthead-rule-thick">
+            </header>
 
-    <div class="np-wordmark">
-        <a href="/index.html">Developers Coffee</a>
-        <span class="np-tagline">Brewing Innovation in Code ☕</span>
-    </div>
+            <div class="story is-lead">
+                <h2 class="story-headline">REPLACE POST TITLE</h2>
+                <div class="story-byline">
+                    By Developers Coffee<span class="story-source-sep">&middot;</span>REPLACE DATE<span class="story-source-sep">&middot;</span>REPLACE CATEGORY/TAGS
+                </div>
 
-    <div class="np-sheet">
-        <div class="np-kicker">REPLACE · Category / Tags</div>
-        <h1 class="np-title">REPLACE POST TITLE</h1>
-        <div class="np-byline">
-            <span>By Developers Coffee</span>
-            <span>REPLACE DATE</span>
-            <span>REPLACE READ TIME</span>
-        </div>
+                <div class="story-body">
+                    <p>REPLACE — opening paragraph.</p>
 
-        <div class="np-article">
-            <p>REPLACE — first paragraph. First letter of the first
-            paragraph gets an automatic drop-cap from .np-article's CSS,
-            no markup needed.</p>
+                    <h2>A section heading</h2>
+                    <p>Body copy. Use <code>&lt;code&gt;</code> for inline code,
+                    <code>&lt;pre&gt;&lt;code&gt;</code> for blocks, and
+                    <code>&lt;blockquote&gt;</code> for quotes — all styled by
+                    newspaper.css already.</p>
 
-            <h2>A section heading</h2>
-            <p>Body copy. Use <code>&lt;code&gt;</code> for inline code,
-            <code>&lt;pre&gt;&lt;code&gt;</code> for blocks, and
-            <code>&lt;blockquote&gt;</code> for quotes — all styled by
-            newspaper.css already.</p>
-
-            <div class="np-callout">
-                <p>Use .np-callout for a boxed aside (links, repo
-                pointers, TL;DR).</p>
+                    <div class="story-callout">
+                        <p>Use .story-callout for a boxed aside (links, repo pointers, TL;DR).</p>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="np-footer">
-            <p>&copy; 2026 Developers Coffee · <a href="https://github.com/DevelopersCoffee" target="_blank">GitHub</a> · <a href="https://www.linkedin.com/company/developerscoffee/" target="_blank">LinkedIn</a></p>
-        </div>
-    </div>
+            <footer class="edition-colophon">
+                <div class="colophon-row">&copy; 2026 Developers Coffee</div>
+                <div class="colophon-row"><a href="https://github.com/DevelopersCoffee" target="_blank">GitHub</a> &middot; <a href="https://www.linkedin.com/company/developerscoffee/" target="_blank">LinkedIn</a> &middot; <a href="https://x.com/DevlopersCoffee" target="_blank">X</a></div>
+            </footer>
+
+        </article>
+    </main>
 
     <script src="/scripts/theme-toggle.js"></script>
 </body>

@@ -137,27 +137,35 @@ body {
     opacity: 0.85;
 }
 
-/* ===== Day/Night toggle (shared markup with blog post pages) ===== */
-.np-toggle {
-    font-family: var(--font-primary);
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    background: var(--bg-secondary);
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
-    cursor: pointer;
-    padding: .4rem .7rem;
-    font-size: .68rem;
-    border-radius: 3px;
-    display: inline-flex;
+/* ===== Day/Night toggle (identical markup/CSS to blog post pages) ===== */
+.rail-btn {
+    position: relative;
+    display: flex;
     align-items: center;
-    gap: .4rem;
-    transition: var(--transition);
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease, opacity 0.15s ease;
 }
-.np-toggle:hover { background: var(--text-primary); color: var(--bg-secondary); }
-.np-toggle .moon { display: none; }
-[data-theme="dark"] .np-toggle .sun { display: none; }
-[data-theme="dark"] .np-toggle .moon { display: inline-block; }
+.masthead-eyebrow-right #theme-toggle.rail-btn {
+    width: auto;
+    height: auto;
+    padding: 0.2rem;
+    color: var(--text-secondary);
+    background: transparent;
+    border: none;
+    transition: color 0.15s ease;
+}
+.masthead-eyebrow-right #theme-toggle.rail-btn:hover { color: var(--accent-primary); background: transparent; }
+
+.theme-toggle-icon .sun { display: none; }
+.theme-toggle-icon .moon { display: inline-block; }
+[data-theme="dark"] .theme-toggle-icon .sun { display: inline-block; }
+[data-theme="dark"] .theme-toggle-icon .moon { display: none; }
 
 .nav-links {
     display: flex;
