@@ -64,14 +64,14 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
 /* ===== Page shell (paper page, floating sheet) ===== */
 .page-container {
-    max-width: 1180px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 2rem clamp(1rem, 2.5vw, 2.25rem) 4rem;
 }
@@ -420,9 +420,17 @@ body {
 /* ===== Featured Projects ===== */
 .featured-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: 1fr;
     gap: 2rem;
     margin-top: 3rem;
+}
+
+@media (min-width: 640px) {
+    .featured-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1000px) {
+    .featured-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 .featured-card {
@@ -592,8 +600,20 @@ body {
 
 .repos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: 1fr;
     gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .repos-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1000px) {
+    .repos-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1400px) {
+    .repos-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
 .repos-more-note {
@@ -803,9 +823,17 @@ body {
 /* ===== Tech Stack Section ===== */
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: 2rem;
     margin-top: 3rem;
+}
+
+@media (min-width: 640px) {
+    .tech-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1000px) {
+    .tech-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
 .tech-category {
