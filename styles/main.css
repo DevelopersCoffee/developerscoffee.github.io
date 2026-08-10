@@ -934,6 +934,10 @@ body {
 
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+
     .nav-links {
         display: none;
     }
@@ -945,13 +949,20 @@ body {
     .masthead-eyebrow {
         flex-wrap: wrap;
         justify-content: center;
+        row-gap: 0.75rem;
     }
 
     .masthead-nav .nav-links {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 1rem;
+        gap: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .dropdown-menu {
+        min-width: 180px;
+        max-width: min(280px, 90vw);
     }
 
     .section {
