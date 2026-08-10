@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-08-10T00:01:09Z",
+  "weekStart": "2026-08-03T00:01:09Z",
+  "organization": "DevelopersCoffee",
+  "updatedRepos": [
+    {
+      "name": "developerscoffee.github.io",
+      "url": "https://github.com/DevelopersCoffee/developerscoffee.github.io",
+      "description": null,
+      "pushedAt": "2026-08-10T00:00:13Z"
+    },
+    {
+      "name": "airo",
+      "url": "https://github.com/DevelopersCoffee/airo",
+      "description": "Airo - open-source super app: AI chat, personal finance, TV & music, games, reading. Local-first, Flutter. Includes Airo TV for Android TV.",
+      "pushedAt": "2026-08-09T19:54:48Z"
+    },
+    {
+      "name": "acdc-petclinic-poc",
+      "url": "https://github.com/DevelopersCoffee/acdc-petclinic-poc",
+      "description": "AC/DC POC: Claude Code inside a deterministic Guide->Verify->Solve loop on spring-petclinic. ArchUnit + SonarQube quality gate catches real violations and drives fixes \u2014 before/after in git history.",
+      "pushedAt": "2026-08-09T19:42:35Z"
+    }
+  ],
+  "newReleases": [
+    {
+      "name": "airo",
+      "url": "https://github.com/DevelopersCoffee/airo/releases/tag/v0.0.6",
+      "tag": "v0.0.6",
+      "releaseName": "Airo 0.0.6",
+      "publishedAt": "2026-08-03T21:09:27Z"
+    }
+  ]
+}
