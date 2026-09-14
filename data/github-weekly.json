@@ -1,20 +1,157 @@
 {
-  "generatedAt": "2026-09-07T11:21:04Z",
-  "weekStart": "2026-08-31T11:21:04Z",
+  "generatedAt": "2026-09-14T11:30:48Z",
+  "weekStart": "2026-09-07T11:30:48Z",
   "organization": "DevelopersCoffee",
   "updatedRepos": [
     {
       "name": "airo",
       "url": "https://github.com/DevelopersCoffee/airo",
       "description": "Airo - open-source super app: AI chat, personal finance, TV & music, games, reading. Local-first, Flutter. Includes Airo TV for Android TV.",
-      "pushedAt": "2026-09-07T08:14:39Z"
+      "pushedAt": "2026-09-14T11:15:18Z"
     },
     {
       "name": "developerscoffee.github.io",
       "url": "https://github.com/DevelopersCoffee/developerscoffee.github.io",
       "description": null,
-      "pushedAt": "2026-08-31T12:26:35Z"
+      "pushedAt": "2026-09-12T19:15:59Z"
+    },
+    {
+      "name": "airo_job_scheduler",
+      "url": "https://github.com/DevelopersCoffee/airo_job_scheduler",
+      "description": "Cooperative CPU resource scheduler and isolate job executor for Flutter",
+      "pushedAt": "2026-09-12T10:44:51Z"
+    },
+    {
+      "name": "airo_pairing",
+      "url": "https://github.com/DevelopersCoffee/airo_pairing",
+      "description": "Trusted device pairing, secret ticket verification, and cross-device handoff contracts for Flutter",
+      "pushedAt": "2026-09-12T10:13:38Z"
+    },
+    {
+      "name": "vibesync",
+      "url": "https://github.com/DevelopersCoffee/vibesync",
+      "description": "VibeSync \u2014 local AI command layer for text and desktop workflows",
+      "pushedAt": "2026-09-11T22:10:26Z"
+    },
+    {
+      "name": "airo_core",
+      "url": "https://github.com/DevelopersCoffee/airo_core",
+      "description": "High-performance Rust platform engine for M3U playlist, XMLTV EPG, text search, and relational store",
+      "pushedAt": "2026-09-08T18:36:37Z"
+    },
+    {
+      "name": "airo_analytics",
+      "url": "https://github.com/DevelopersCoffee/airo_analytics",
+      "description": "Vendor-neutral privacy-preserving event analytics and streaming performance metrics for Flutter",
+      "pushedAt": "2026-09-08T18:33:17Z"
+    },
+    {
+      "name": "airo_protocol",
+      "url": "https://github.com/DevelopersCoffee/airo_protocol",
+      "description": "Protobuf edge node envelope & connected device transport protocol for Flutter",
+      "pushedAt": "2026-09-08T18:31:29Z"
+    },
+    {
+      "name": "airo_background_downloads",
+      "url": "https://github.com/DevelopersCoffee/airo_background_downloads",
+      "description": "Progressive background downloader with resume policies and integrity verification for Flutter",
+      "pushedAt": "2026-09-08T18:30:45Z"
+    },
+    {
+      "name": "airo_calendar",
+      "url": "https://github.com/DevelopersCoffee/airo_calendar",
+      "description": "Cross-platform Flutter calendar capability wrapper with fakes & diagnostic harness",
+      "pushedAt": "2026-09-08T18:29:50Z"
+    },
+    {
+      "name": "dpad_qualification",
+      "url": "https://github.com/DevelopersCoffee/dpad_qualification",
+      "description": "Reusable device qualification & D-Pad navigation harness for Flutter TV, mobile, tablet, and foldables.",
+      "pushedAt": "2026-09-08T18:09:33Z"
+    },
+    {
+      "name": "iptv_org_api",
+      "url": "https://github.com/DevelopersCoffee/iptv_org_api",
+      "description": "Typed, cached, isolate-parsed relational Dart client for the public iptv-org database.",
+      "pushedAt": "2026-09-08T18:08:37Z"
+    },
+    {
+      "name": "run_off_main",
+      "url": "https://github.com/DevelopersCoffee/run_off_main",
+      "description": "Isolate execution engine for Dart & Flutter with Timeline task tracing and graceful Web fallback.",
+      "pushedAt": "2026-09-08T18:06:51Z"
     }
   ],
-  "newReleases": []
+  "newReleases": [
+    {
+      "name": "airo_protocol",
+      "url": "https://github.com/DevelopersCoffee/airo_protocol/releases/tag/v1.0.0",
+      "tag": "v1.0.0",
+      "releaseName": "v1.0.0 - Protobuf Edge Node Envelope & Transport Protocol for Flutter",
+      "publishedAt": "2026-09-08T16:58:52Z"
+    },
+    {
+      "name": "airo_pairing",
+      "url": "https://github.com/DevelopersCoffee/airo_pairing/releases/tag/v1.0.0",
+      "tag": "v1.0.0",
+      "releaseName": "v1.0.0 - Trusted Device Pairing & Playback Ticket Verification for Flutter",
+      "publishedAt": "2026-09-08T16:57:49Z"
+    },
+    {
+      "name": "airo_analytics",
+      "url": "https://github.com/DevelopersCoffee/airo_analytics/releases/tag/v1.0.0",
+      "tag": "v1.0.0",
+      "releaseName": "v1.0.0 - Vendor-Neutral Privacy Analytics & Streaming Metrics for Flutter",
+      "publishedAt": "2026-09-08T16:56:34Z"
+    },
+    {
+      "name": "airo_job_scheduler",
+      "url": "https://github.com/DevelopersCoffee/airo_job_scheduler/releases/tag/v1.0.0",
+      "tag": "v1.0.0",
+      "releaseName": "v1.0.0 - Cooperative CPU Resource Scheduler & Worker Executor for Flutter",
+      "publishedAt": "2026-09-08T16:55:22Z"
+    },
+    {
+      "name": "airo_background_downloads",
+      "url": "https://github.com/DevelopersCoffee/airo_background_downloads/releases/tag/v1.0.0",
+      "tag": "v1.0.0",
+      "releaseName": "v1.0.0 - Progressive Background Downloader for Flutter",
+      "publishedAt": "2026-09-08T16:54:02Z"
+    },
+    {
+      "name": "airo_calendar",
+      "url": "https://github.com/DevelopersCoffee/airo_calendar/releases/tag/v1.0.0",
+      "tag": "v1.0.0",
+      "releaseName": "v1.0.0 - Cross-Platform Flutter Calendar Capability Wrapper",
+      "publishedAt": "2026-09-08T16:52:44Z"
+    },
+    {
+      "name": "airo_core",
+      "url": "https://github.com/DevelopersCoffee/airo_core/releases/tag/v0.1.0",
+      "tag": "v0.1.0",
+      "releaseName": "v0.1.0 - High-Performance Rust Platform Engines",
+      "publishedAt": "2026-09-07T21:16:02Z"
+    },
+    {
+      "name": "iptv_org_api",
+      "url": "https://github.com/DevelopersCoffee/iptv_org_api/releases/tag/v1.0.0",
+      "tag": "v1.0.0",
+      "releaseName": "v1.0.0 - Typed, Cached Relational IPTV-Org API Client",
+      "publishedAt": "2026-09-07T21:15:58Z"
+    },
+    {
+      "name": "run_off_main",
+      "url": "https://github.com/DevelopersCoffee/run_off_main/releases/tag/v1.0.0",
+      "tag": "v1.0.0",
+      "releaseName": "v1.0.0 - Off-Main-Isolate Execution Engine",
+      "publishedAt": "2026-09-07T21:15:54Z"
+    },
+    {
+      "name": "dpad_qualification",
+      "url": "https://github.com/DevelopersCoffee/dpad_qualification/releases/tag/v1.0.0",
+      "tag": "v1.0.0",
+      "releaseName": "v1.0.0 - Android TV D-Pad & Device Qualification Harness",
+      "publishedAt": "2026-09-07T21:15:49Z"
+    }
+  ]
 }
