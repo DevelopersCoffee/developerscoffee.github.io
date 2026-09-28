@@ -1,100 +1,40 @@
 {
-  "generatedAt": "2026-09-21T11:44:50Z",
-  "weekStart": "2026-09-14T11:44:50Z",
+  "generatedAt": "2026-09-28T12:40:04Z",
+  "weekStart": "2026-09-21T12:40:04Z",
   "organization": "DevelopersCoffee",
   "updatedRepos": [
+    {
+      "name": "amiro",
+      "url": "https://github.com/DevelopersCoffee/amiro",
+      "description": "Amiro \u2014 your digital identity, made wearable. Local-first Flutter app: 3D avatar identity, NFC/QR sharing.",
+      "pushedAt": "2026-09-28T12:36:35Z"
+    },
     {
       "name": "airo",
       "url": "https://github.com/DevelopersCoffee/airo",
       "description": "Airo - open-source super app: AI chat, personal finance, TV & music, games, reading. Local-first, Flutter. Includes Airo TV for Android TV.",
-      "pushedAt": "2026-09-21T11:15:37Z"
-    },
-    {
-      "name": "airo_haptics",
-      "url": "https://github.com/DevelopersCoffee/airo_haptics",
-      "description": "A cross-platform Flutter haptics engine with semantic feedback, custom patterns, and native platform optimization",
-      "pushedAt": "2026-09-19T10:48:22Z"
-    },
-    {
-      "name": "iptv_org_api",
-      "url": "https://github.com/DevelopersCoffee/iptv_org_api",
-      "description": "Typed, cached, isolate-parsed relational Dart client for the public iptv-org database.",
-      "pushedAt": "2026-09-19T10:45:44Z"
-    },
-    {
-      "name": "airo_ads",
-      "url": "https://github.com/DevelopersCoffee/airo_ads",
-      "description": null,
-      "pushedAt": "2026-09-19T08:10:14Z"
-    },
-    {
-      "name": "airo_local_l10n",
-      "url": "https://github.com/DevelopersCoffee/airo_local_l10n",
-      "description": "High-performance hybrid Flutter-Rust localization & OTA translation engine",
-      "pushedAt": "2026-09-19T07:31:47Z"
-    },
-    {
-      "name": "airo_notifications",
-      "url": "https://github.com/DevelopersCoffee/airo_notifications",
-      "description": "Native-first local alert, notification grouping, task follow-up & scheduling execution engine for Flutter.",
-      "pushedAt": "2026-09-17T20:15:55Z"
-    },
-    {
-      "name": "airo_calendar",
-      "url": "https://github.com/DevelopersCoffee/airo_calendar",
-      "description": "Cross-platform Flutter calendar capability wrapper with fakes & diagnostic harness",
-      "pushedAt": "2026-09-16T15:11:46Z"
-    },
-    {
-      "name": "airo_device_profile",
-      "url": "https://github.com/DevelopersCoffee/airo_device_profile",
-      "description": null,
-      "pushedAt": "2026-09-16T14:47:25Z"
+      "pushedAt": "2026-09-28T11:52:34Z"
     },
     {
       "name": "airo_epg",
       "url": "https://github.com/DevelopersCoffee/airo_epg",
       "description": null,
-      "pushedAt": "2026-09-16T14:44:22Z"
+      "pushedAt": "2026-09-24T14:37:49Z"
     },
     {
-      "name": "airo_m3u_parser",
-      "url": "https://github.com/DevelopersCoffee/airo_m3u_parser",
+      "name": "barista-tuning",
+      "url": "https://github.com/DevelopersCoffee/barista-tuning",
       "description": null,
-      "pushedAt": "2026-09-16T14:41:31Z"
-    },
-    {
-      "name": "m3u_parser",
-      "url": "https://github.com/DevelopersCoffee/m3u_parser",
-      "description": null,
-      "pushedAt": "2026-09-16T14:39:07Z"
-    },
-    {
-      "name": "airo_background_downloads",
-      "url": "https://github.com/DevelopersCoffee/airo_background_downloads",
-      "description": "Progressive background downloader with resume policies and integrity verification for Flutter",
-      "pushedAt": "2026-09-16T14:00:50Z"
-    },
-    {
-      "name": "run_off_main",
-      "url": "https://github.com/DevelopersCoffee/run_off_main",
-      "description": "Isolate execution engine for Dart & Flutter with Timeline task tracing and graceful Web fallback.",
-      "pushedAt": "2026-09-15T07:38:59Z"
-    },
-    {
-      "name": "dpad_qualification",
-      "url": "https://github.com/DevelopersCoffee/dpad_qualification",
-      "description": "Reusable device qualification & D-Pad navigation harness for Flutter TV, mobile, tablet, and foldables.",
-      "pushedAt": "2026-09-15T05:34:19Z"
+      "pushedAt": "2026-09-23T20:23:45Z"
     }
   ],
   "newReleases": [
     {
       "name": "airo",
-      "url": "https://github.com/DevelopersCoffee/airo/releases/tag/aika-stream-v0.0.1",
-      "tag": "aika-stream-v0.0.1",
-      "releaseName": "Airo TV 0.0.1",
-      "publishedAt": "2026-09-15T05:39:02Z"
+      "url": "https://github.com/DevelopersCoffee/airo/releases/tag/aika-stream-v0.0.2",
+      "tag": "aika-stream-v0.0.2",
+      "releaseName": "Aika Stream 0.0.2",
+      "publishedAt": "2026-09-22T03:15:19Z"
     }
   ]
 }
