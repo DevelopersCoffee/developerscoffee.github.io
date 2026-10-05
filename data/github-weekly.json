@@ -1,40 +1,26 @@
 {
-  "generatedAt": "2026-09-28T12:40:04Z",
-  "weekStart": "2026-09-21T12:40:04Z",
+  "generatedAt": "2026-10-05T13:20:49Z",
+  "weekStart": "2026-09-28T13:20:49Z",
   "organization": "DevelopersCoffee",
   "updatedRepos": [
-    {
-      "name": "amiro",
-      "url": "https://github.com/DevelopersCoffee/amiro",
-      "description": "Amiro \u2014 your digital identity, made wearable. Local-first Flutter app: 3D avatar identity, NFC/QR sharing.",
-      "pushedAt": "2026-09-28T12:36:35Z"
-    },
     {
       "name": "airo",
       "url": "https://github.com/DevelopersCoffee/airo",
       "description": "Airo - open-source super app: AI chat, personal finance, TV & music, games, reading. Local-first, Flutter. Includes Airo TV for Android TV.",
-      "pushedAt": "2026-09-28T11:52:34Z"
+      "pushedAt": "2026-10-05T11:13:26Z"
     },
     {
-      "name": "airo_epg",
-      "url": "https://github.com/DevelopersCoffee/airo_epg",
-      "description": null,
-      "pushedAt": "2026-09-24T14:37:49Z"
+      "name": "amiro",
+      "url": "https://github.com/DevelopersCoffee/amiro",
+      "description": "Amiro \u2014 your digital identity, made wearable. Local-first Flutter app: 3D avatar identity, NFC/QR sharing.",
+      "pushedAt": "2026-10-03T03:31:49Z"
     },
     {
-      "name": "barista-tuning",
-      "url": "https://github.com/DevelopersCoffee/barista-tuning",
-      "description": null,
-      "pushedAt": "2026-09-23T20:23:45Z"
+      "name": "rulekit",
+      "url": "https://github.com/DevelopersCoffee/rulekit",
+      "description": "Business-agnostic on-device rules engine (Rule / Condition / Action / Trigger). Host apps supply domain plugins.",
+      "pushedAt": "2026-10-03T03:23:01Z"
     }
   ],
-  "newReleases": [
-    {
-      "name": "airo",
-      "url": "https://github.com/DevelopersCoffee/airo/releases/tag/aika-stream-v0.0.2",
-      "tag": "aika-stream-v0.0.2",
-      "releaseName": "Aika Stream 0.0.2",
-      "publishedAt": "2026-09-22T03:15:19Z"
-    }
-  ]
+  "newReleases": []
 }
