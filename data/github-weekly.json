@@ -1,13 +1,61 @@
 {
-  "generatedAt": "2026-10-12T14:10:28Z",
-  "weekStart": "2026-10-05T14:10:28Z",
+  "generatedAt": "2026-10-19T11:51:29Z",
+  "weekStart": "2026-10-12T11:51:29Z",
   "organization": "DevelopersCoffee",
   "updatedRepos": [
     {
       "name": "airo",
       "url": "https://github.com/DevelopersCoffee/airo",
       "description": "Airo - open-source super app: AI chat, personal finance, TV & music, games, reading. Local-first, Flutter. Includes Airo TV for Android TV.",
-      "pushedAt": "2026-10-06T11:23:45Z"
+      "pushedAt": "2026-10-19T11:16:10Z"
+    },
+    {
+      "name": "airo_background_downloads",
+      "url": "https://github.com/DevelopersCoffee/airo_background_downloads",
+      "description": "Progressive background downloader with resume policies and integrity verification for Flutter",
+      "pushedAt": "2026-10-17T14:21:55Z"
+    },
+    {
+      "name": "airo_device_profile",
+      "url": "https://github.com/DevelopersCoffee/airo_device_profile",
+      "description": null,
+      "pushedAt": "2026-10-17T13:19:26Z"
+    },
+    {
+      "name": "barista-tuning",
+      "url": "https://github.com/DevelopersCoffee/barista-tuning",
+      "description": null,
+      "pushedAt": "2026-10-17T12:49:02Z"
+    },
+    {
+      "name": "discovery_profile",
+      "url": "https://github.com/DevelopersCoffee/discovery_profile",
+      "description": "Local-first personal discovery profile, adaptive questions, and evidence-backed insights.",
+      "pushedAt": "2026-10-16T18:07:51Z"
+    },
+    {
+      "name": "dpad_qualification",
+      "url": "https://github.com/DevelopersCoffee/dpad_qualification",
+      "description": "Reusable device qualification & D-Pad navigation harness for Flutter TV, mobile, tablet, and foldables.",
+      "pushedAt": "2026-10-16T17:44:51Z"
+    },
+    {
+      "name": "rulekit",
+      "url": "https://github.com/DevelopersCoffee/rulekit",
+      "description": "Business-agnostic on-device rules engine (Rule / Condition / Action / Trigger). Host apps supply domain plugins.",
+      "pushedAt": "2026-10-16T10:44:25Z"
+    },
+    {
+      "name": "amiro",
+      "url": "https://github.com/DevelopersCoffee/amiro",
+      "description": "Amiro \u2014 your digital identity, made wearable. Local-first Flutter app: 3D avatar identity, NFC/QR sharing.",
+      "pushedAt": "2026-10-13T09:30:39Z"
+    },
+    {
+      "name": "developerscoffee.github.io",
+      "url": "https://github.com/DevelopersCoffee/developerscoffee.github.io",
+      "description": null,
+      "pushedAt": "2026-10-12T14:10:35Z"
     }
   ],
   "newReleases": []
