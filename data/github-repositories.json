@@ -1,25 +1,7 @@
 {
-  "generatedAt": "2026-11-02T14:31:39Z",
+  "generatedAt": "2026-11-09T14:56:04Z",
   "organization": "DevelopersCoffee",
   "repositories": [
-    {
-      "name": "amiro",
-      "fullName": "DevelopersCoffee/amiro",
-      "description": "Amiro \u2014 your digital identity, made wearable. Local-first Flutter app: 3D avatar identity, NFC/QR sharing.",
-      "url": "https://github.com/DevelopersCoffee/amiro",
-      "homepage": null,
-      "language": "Dart",
-      "topics": [],
-      "stars": 0,
-      "forks": 0,
-      "openIssues": 3,
-      "defaultBranch": "main",
-      "createdAt": "2026-09-22T19:50:41Z",
-      "updatedAt": "2026-10-26T02:48:57Z",
-      "pushedAt": "2026-11-02T05:07:32Z",
-      "archived": false,
-      "latestRelease": null
-    },
     {
       "name": "airo",
       "fullName": "DevelopersCoffee/airo",
@@ -48,11 +30,11 @@
       ],
       "stars": 18,
       "forks": 2,
-      "openIssues": 373,
+      "openIssues": 379,
       "defaultBranch": "main",
       "createdAt": "2025-10-07T21:36:54Z",
       "updatedAt": "2026-11-01T14:32:22Z",
-      "pushedAt": "2026-10-28T05:27:36Z",
+      "pushedAt": "2026-11-09T11:20:46Z",
       "archived": false,
       "latestRelease": {
         "tag": "aika-stream-v0.0.2",
@@ -62,6 +44,24 @@
         "prerelease": false,
         "body": "# Aika Stream 0.0.2\n\nAika Stream 0.0.2 is a focused player release for media sources you are authorized to use.\n\n## Highlights\n\n- Kept Aika Stream as the focused IPTV product surface.\n- Removed obsolete Airo Streaming and Airo IPTV product-target wiring from release configuration.\n- Added TV Explorer-inspired filters, settings, player controls, and bounded channel warmup.\n- Updated public release documentation, store posture, and feature matrix for 0.0.2.\n\n## New Features\n\n### IPTV\n\n- Supports u"
       }
+    },
+    {
+      "name": "amiro",
+      "fullName": "DevelopersCoffee/amiro",
+      "description": "Amiro \u2014 your digital identity, made wearable. Local-first Flutter app: 3D avatar identity, NFC/QR sharing.",
+      "url": "https://github.com/DevelopersCoffee/amiro",
+      "homepage": null,
+      "language": "Dart",
+      "topics": [],
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 1,
+      "defaultBranch": "main",
+      "createdAt": "2026-09-22T19:50:41Z",
+      "updatedAt": "2026-11-03T06:20:01Z",
+      "pushedAt": "2026-11-09T04:38:45Z",
+      "archived": false,
+      "latestRelease": null
     },
     {
       "name": "developerscoffee.github.io",
@@ -76,8 +76,8 @@
       "openIssues": 0,
       "defaultBranch": "main",
       "createdAt": "2020-10-24T07:59:30Z",
-      "updatedAt": "2026-10-26T12:05:49Z",
-      "pushedAt": "2026-10-26T12:05:45Z",
+      "updatedAt": "2026-11-02T14:31:54Z",
+      "pushedAt": "2026-11-02T14:31:49Z",
       "archived": false,
       "latestRelease": null
     },
