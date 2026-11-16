@@ -1,19 +1,37 @@
 {
-  "generatedAt": "2026-11-09T14:56:04Z",
-  "weekStart": "2026-11-02T14:56:04Z",
+  "generatedAt": "2026-11-16T14:31:39Z",
+  "weekStart": "2026-11-09T14:31:39Z",
   "organization": "DevelopersCoffee",
   "updatedRepos": [
+    {
+      "name": "rulekit",
+      "url": "https://github.com/DevelopersCoffee/rulekit",
+      "description": "Business-agnostic on-device rules engine (Rule / Condition / Action / Trigger). Host apps supply domain plugins.",
+      "pushedAt": "2026-11-16T04:52:40Z"
+    },
     {
       "name": "airo",
       "url": "https://github.com/DevelopersCoffee/airo",
       "description": "Airo - open-source super app: AI chat, personal finance, TV & music, games, reading. Local-first, Flutter. Includes Airo TV for Android TV.",
-      "pushedAt": "2026-11-09T11:20:46Z"
+      "pushedAt": "2026-11-16T04:47:08Z"
+    },
+    {
+      "name": "airo-virtual-desk-simulator",
+      "url": "https://github.com/DevelopersCoffee/airo-virtual-desk-simulator",
+      "description": "3D virtual standing desk simulator for Airo Adaptive Drive",
+      "pushedAt": "2026-11-15T08:35:43Z"
     },
     {
       "name": "amiro",
       "url": "https://github.com/DevelopersCoffee/amiro",
       "description": "Amiro \u2014 your digital identity, made wearable. Local-first Flutter app: 3D avatar identity, NFC/QR sharing.",
-      "pushedAt": "2026-11-09T04:38:45Z"
+      "pushedAt": "2026-11-13T06:19:14Z"
+    },
+    {
+      "name": "developerscoffee.github.io",
+      "url": "https://github.com/DevelopersCoffee/developerscoffee.github.io",
+      "description": null,
+      "pushedAt": "2026-11-09T14:56:15Z"
     }
   ],
   "newReleases": []
